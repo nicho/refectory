@@ -1,0 +1,33 @@
+Eclipse Preparation
+-------------------
+
+Install Google-Eclipse-Plugin (GEP)
+
+Run:
+
+ 	mvn -Declipse.workspace=<path-to-eclipse-workspace> eclipse:add-maven-repo
+	<path-to-eclipse-workspace> like D:\space\tiger.1.0
+  
+Restart Eclipse maybe required.  Then...
+
+  mvn clean eclipse:clean eclipse:eclipse
+
+  
+Right-Click the Project, Google -> Web Toolkit Settings -> Use Google Web Toolkit
+Remember to download and setup the Google Eclipse Plugin to use 2.1.0.m2.
+
+Then:
+ 
+  mvn war:exploded gwt:eclipse
+
+Refresh (F5) the Project.  The project should be setup.
+
+Use the toolbar: Run -> Run Configurations...
+
+Firefox should automatically install a plugin to run the GWT app.
+If not, then go to:
+
+  http://code.google.com/p/google-web-toolkit/source/browse/trunk/plugins/xpcom/prebuilt/gwt-dev-plugin.xpi
+
+At the bottom right, click "View raw file" to install it.
+

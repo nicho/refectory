@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui' xmlns:d='urn:import:com.google.gwt.user.datepicker.client'
+	xmlns:c="urn:import:com.google.gwt.user.cellview.client">
+
+	<ui:style src="new2.css" field="new2"></ui:style>
+	<g:HTMLPanel>
+		<div class="{new2.frame-wrap}">
+
+			<!--面包屑 [[ -->
+			<g:FlowPanel ui:field="breadCrumbs" />
+			<!--面包屑 ]] -->
+
+			<p class="{new2.send-news}">
+				<div style="float:right;text-align:right;padding-top: 5px;">
+					<g:Hidden ui:field="currentDepartmentId"></g:Hidden>
+					<span class="{new2.btn}">
+						<g:Button ui:field="addChildBtn" text="增加子部门" visible="false" />
+					</span>
+					<span class="{new2.nbsp}"></span>
+					<span class="{new2.btn}">
+						<g:Button ui:field="deleteBtn" text="删除部门"  visible="false"/>
+					</span>
+					<span class="{new2.nbsp}"></span>
+					<span class="{new2.btn}">
+						<g:Button ui:field="editBtn" text="编辑部门详细"  />
+					</span>
+				</div>
+			</p>
+
+
+			<div class="{new2.divend}"></div>
+			<div class="{new2.table}">
+				<table>
+					<tr>
+						<td style="width:15%"></td>
+						<td style="width:25%">
+							<table>
+								<tr>
+									<td>
+										<g:AbsolutePanel ui:field="cellTree" height="250px" />
+									</td>
+								</tr>
+							</table>
+						</td>
+						<td style="width:70%"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder>

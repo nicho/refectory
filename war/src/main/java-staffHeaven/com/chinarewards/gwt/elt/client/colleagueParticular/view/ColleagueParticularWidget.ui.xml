@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+	<ui:style src="new2.css" field="new2"></ui:style>
+	<g:HTMLPanel>
+		<div class="{new2.employee}">
+			<div class="{new2.content-wrap} {new2.glorylist-wrap}">
+				<div class="{new2.content-info}">
+					<div class="{new2.breadcrumb}">
+						<a href="#">同事</a> &gt; 
+						<span>员工详细资料</span>
+					</div>
+
+					<div class="{new2.news-wrap}">
+						<ul class="{new2.news-menu}">
+							<li class="{new2.news-on}">
+								<g:Anchor ui:field="staffView" text="详细资料" />
+							</li>
+							<li>
+								<g:Anchor ui:field="staffBroadcast" text="TA的动态和广播" />
+							</li>
+							<li>
+								<g:Anchor ui:field="staffGlory" text="TA的光荣榜" />
+							</li>
+							<li>
+								<g:Anchor ui:field="sendMessage" text="给TA发信息" />
+							</li>
+						</ul>
+					</div>
+					<g:FlowPanel ui:field="resultPanel" styleName="{new2.panelClass}" />
+				</div>
+			</div>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder> 

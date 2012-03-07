@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui' xmlns:d='urn:import:com.google.gwt.user.datepicker.client'
+	xmlns:c="urn:import:com.google.gwt.user.cellview.client" xmlns:z="urn:import:com.sun.org.apache.xpath.internal.operations">
+
+	<ui:style src="new2.css" field="new2"></ui:style>
+	<g:HTMLPanel>
+
+		
+				   <div class="{new2.employee}">
+		  <!-- 内容区 [[-->
+    <div class="{new2.content-wrap}">
+      <div class="{new2.content-info}">
+        <div class="{new2.breadcrumb}">
+          <a href="#">首页</a>&gt;<a href="#">兑换历史</a>&gt;<span>订单详细</span>
+        </div>
+
+        <div class="{new2.order-detail}">
+          <h3>订单提交</h3>
+
+
+          <p class="{new2.order-title}">订单收货人信息</p>
+          <div class="{new2.order-section}">
+            <p><span class="{new2.order-field}">收货人：</span> <g:TextBox maxLength="9" ui:field="name" styleName="{new2.text}" enabled="false"/></p>
+            <p><span class="{new2.order-field}">电话：</span> <g:TextBox maxLength="12" ui:field="phone" styleName="{new2.text}" enabled="false"/></p>
+            <p><span class="{new2.order-field}">收货地址：</span> <g:TextBox maxLength="100" ui:field="address" styleName="{new2.text} {new2.long-text}" enabled="false"/></p>
+            <p><span class="{new2.order-field}">邮编：</span> <g:TextBox maxLength="9" ui:field="zipCode" styleName="{new2.text}" enabled="false"/></p>
+          </div>
+
+          <p class="{new2.order-title}">订单包含礼品</p>
+          <table class="{new2.order-gift-info}">
+            <tr>
+              <th>图片</th>
+              <th>礼品名称</th>
+              <th>单价(积分)</th>
+              <th>数量</th>
+              <th>礼品来源</th>
+            </tr>
+            <tr>
+              <td><g:Image pixelSize="121,91" ui:field="shopImage"></g:Image> </td>
+              <td><g:Anchor ui:field="shopText" text="礼品名加载..." styleName="{new2.shopa}" /> </td>
+              <td><g:InlineLabel ui:field="unitprice" text="100" /></td>
+              <td><g:TextBox maxLength="4" ui:field="number" styleName="{new2.short-text}" enabled="false"/></td>
+              <td><g:InlineLabel ui:field="source" text="100" /></td>
+            </tr>
+          </table>
+          
+          <div class="{new2.message}"><g:InlineLabel  text="您的积分:" /><g:InlineLabel ui:field="mybalance" text="0" />  <g:InlineLabel ui:field="message" text="您的积分不足！" /></div>
+          <p class="{new2.order-total}">订单共需要积分：<span class="{new2.color-orange}"><g:InlineLabel ui:field="total"  /> </span> 积分</p>
+
+          <p class="{new2.order-title} {new2.title-gray}">附加信息</p>
+          <div class="{new2.order-section}">
+            <g:TextArea width="100%"  ui:field="orderDefinition" visibleLines="6" styleName="{new2.textarea}" enabled="false"/>
+          </div>
+
+          <p class="{new2.order-title} {new2.title-gray}"><g:InlineLabel ui:field="specialNote" text="特别提示:"/></p>
+          <div class="{new2.order-section}">
+            <p>该礼品由以下礼品公司提供，如有疑问，请致电咨询：</p>
+            <p class="{new2.color-blue}">供应商名称：<g:InlineLabel ui:field="business" /></p>
+            <p class="{new2.color-blue}">服务电话：<g:InlineLabel ui:field="servicetell" /></p>
+          </div>
+
+          <p class="{new2.link-manager}">收到礼品后如确认无误，请及时改变订单状态，如无处理，订单状态将在45天后自动改为“确认收货”状态。
+如收货后发现问题，请与系统礼品管理员或礼品公司联系调换，谢谢合作！</p>
+
+
+								
+
+								
+								
+								
+          <p class="{new2.back-btn-wrap}"><span class="{new2.blue-btn}"><g:Button ui:field="confirmbutton" text="确认"/></span> <span class="{new2.nbsp}"></span> <span class="{new2.blue-btn}"><g:Button ui:field="returnbutton" text="返回" /></span></p>
+
+        </div>
+      </div>
+    </div>
+    <!-- 内容区 ]]-->
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder>

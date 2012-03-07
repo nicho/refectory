@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:p1="urn:import:com.google.gwt.user.cellview.client"
+	xmlns:d='urn:import:com.google.gwt.user.datepicker.client'>
+
+	<ui:style src="new2.css" field="new2"></ui:style>
+	<g:HTMLPanel styleName="{new2.enterprise-reg}">
+	  
+	  <!-- 1内容 -->
+		  <div class="{new2.reg-form}">
+		   <h3>企业注册</h3>
+           <h4>企业基本信息：</h4>
+           <div class="{new2.form}">
+           <div class="{new2.form-line}">
+	         <label class="{new2.label}">
+	           <span style="color:red">*</span>
+	                            企业名称：
+	         </label>
+	        <div class="{new2.element}">
+	          <g:TextBox maxLength="30" ui:field="enterpriseName" styleName="{new2.text}" />
+	          <span class="{new2.field-wrap}">
+	           <label class="{new2.label}">企业子域名：</label>
+	            <g:TextBox maxLength="20" ui:field="web" styleName="{new2.text}" />
+	          </span>
+	        </div>
+	      </div>
+		 <div class="{new2.form-line}">
+	        <label class="{new2.label}">企业地址：</label>
+	        <div class="{new2.element}">
+	          <g:TextBox maxLength="30" ui:field="address" styleName="{new2.long-text}" />
+	        </div>
+	      </div>
+		
+		
+			
+			
+		 <div class="{new2.form-line}">
+	         <label class="{new2.label}">
+	           
+	                          联系人：
+	         </label>
+	        <div class="{new2.element}">
+	          <g:TextBox maxLength="20" ui:field="linkman" styleName="{new2.text}" />
+	          <span class="{new2.field-wrap}">
+	           <label class="{new2.label}">联系电话：</label>
+	            <g:TextBox maxLength="20" ui:field="tell" styleName="{new2.text}" />
+	          </span>
+	        </div>
+	      </div>
+      
+			<div class="{new2.form-line}">
+	         <label class="{new2.label}">
+	           
+	                        手机号：
+	         </label>
+	        <div class="{new2.element}">
+	          <g:TextBox maxLength="20" ui:field="cellphone" styleName="{new2.text}" />
+	          <span class="{new2.field-wrap}">
+	           <label class="{new2.label}"><span style="color:red">*</span>Email:</label>
+	           <g:TextBox maxLength="20" ui:field="email" styleName="{new2.text}" />
+	          </span>
+	        </div>
+	      </div>
+			
+			
+			
+			<div class="{new2.form-line}">
+				<label class="{new2.label}">
+				备注：
+				</label>
+				<div class="{new2.element}">
+					<g:TextArea ui:field="remark" visibleLines="3"
+							styleName="{new2.textarea}" />
+				</div>
+			</div>
+			
+			
+			
+			 <div class="{new2.form-line}">
+		        <div class="{new2.element}">
+		          <g:CheckBox ui:field="see" text="我已阅读注册协议" /> <a href="#">&lt;&lt;积享通员工忠诚度管理系统协议</a>
+		        </div>
+		      </div>
+		
+		      <span class="{new2.cutline}"></span>
+				<div class="{new2.form-line} {new2.form-line-btn}">
+					<div class="{new2.element}">
+						<span class="{new2.btn}">
+							<g:Button ui:field="saveButton">创 建</g:Button>
+						</span>
+					</div>
+				</div>
+			</div>
+			
+	  </div>
+	 
+		
+	</g:HTMLPanel>
+</ui:UiBinder> 

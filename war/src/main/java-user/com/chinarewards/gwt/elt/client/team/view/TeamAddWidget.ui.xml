@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:p1="urn:import:com.google.gwt.user.cellview.client"
+	xmlns:d='urn:import:com.google.gwt.user.datepicker.client'>
+
+	<ui:style src="new2.css" field="new2"></ui:style>
+
+	<g:HTMLPanel styleName="{new2.frame-wrap}">
+		<!--面包屑 [[ -->
+		<g:FlowPanel ui:field="breadCrumbs" />
+		<!--面包屑 ]] -->
+
+		<!-- 1内容 -->
+		<div class="{new2.content-wrap}">
+			<div class="{new2.form}">
+				<div class="{new2.form-line}">
+					<label class="{new2.label}">
+						<span style="color:red">*</span>
+						小组名称：
+					</label>
+					<div class="{new2.element}">
+						<g:TextBox maxLength="20" ui:field="name" styleName="{new2.text}" />		
+						
+					</div>
+				</div>
+				
+				<div class="{new2.form-line}">
+					<label class="{new2.label6}">小组说明：</label>
+					<div class="{new2.element}">
+						<g:TextArea ui:field="explains" visibleLines="3"
+							styleName="{new2.textarea}" />
+					</div>
+				</div>
+				
+			
+                <div class="{new2.form-line}">
+		        <label class="{new2.label2}"> 负责人：</label>
+			        <div class="{new2.element}">
+			          <g:FlowPanel ui:field="staffAreaPanel" styleName="{new2.element2}"/><span class="{new2.nbsp}"></span><span class="{new2.btn}">
+			          <g:Button ui:field="chooseBtn" >选择</g:Button></span>
+			        </div>
+				 </div> 
+				 <div class="{new2.form-line}">
+		        <label class="{new2.label2}"> 其它成员：</label>
+			        <div class="{new2.element}">
+			          <g:FlowPanel ui:field="staffsAreaPanel" styleName="{new2.element2}"/><span class="{new2.nbsp}"></span><span class="{new2.btn}">
+			          <g:Button ui:field="chooseBtns" >选择</g:Button></span>
+			        </div>
+				 </div>     
+
+				<span class="{new2.cutline}"></span>
+				<div class="{new2.form-line} {new2.form-line-btn}">
+					<div class="{new2.element}">
+									
+						<span class="{new2.btn}">
+							<g:Button ui:field="save">保存</g:Button>
+						</span>
+						<span class="{new2.nbsp}"></span>
+						<span class="{new2.btn}">
+							<g:Button ui:field="back" styleName="button-ok">返回 </g:Button>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:image field="logo" resource="logo.jpg"></ui:image>
+	<ui:image field="logo_name" resource="logo_name.jpg"></ui:image>
+	<ui:image field="help" resource="help.jpg"></ui:image>
+	<ui:image field="helpover" resource="helpover.jpg"></ui:image>
+	<ui:image field="helpdown" resource="helpdown.jpg"></ui:image>
+	<ui:image field="log" resource="log.jpg"></ui:image>
+	<ui:image field="logover" resource="logover.jpg"></ui:image>
+	<ui:image field="logdown" resource="logdown.jpg"></ui:image>
+	<ui:image field="exit" resource="exit.jpg"></ui:image>
+	<ui:image field="exitover" resource="exitover.jpg"></ui:image>
+	<ui:image field="exitdown" resource="exitdown.jpg"></ui:image>
+	<ui:image field="title01" resource="title01.jpg"></ui:image>
+	<ui:image field="title02" resource="title02.jpg" repeatStyle="Horizontal"></ui:image>
+	<ui:image field="title03" resource="title03.jpg"></ui:image>
+	<ui:image field="center" resource="center.jpg" repeatStyle="Vertical"></ui:image>
+	<ui:image field="topbg" resource="topbg.jpg" repeatStyle="Horizontal"></ui:image>
+	<ui:image field="top02" resource="top02.jpg" repeatStyle="Horizontal"></ui:image>
+	<ui:image field="footer" resource="footer.jpg" repeatStyle="Horizontal"></ui:image>
+	<!-- new -->
+	<ui:image field="logo_new" resource="logo_new.png"></ui:image>
+
+	<ui:style src="index.css"></ui:style>
+	<ui:style src="new2.css" field="new2"></ui:style>
+
+<g:ScrollPanel>
+			<g:HTMLPanel>
+				<!--head -->
+				<div class="{new2.employee}">
+
+					<div class="{new2.index} {new2.head}" id="head">
+						<div class="{new2.top-nav} {new2.clearfix}">
+							<ul>
+								<li>
+									<g:Anchor text="管理中心" styleName="{new2.newa}"
+										ui:field="managementCenter" />
+								</li>
+								<li>
+									<g:Anchor text="礼品兑换" styleName="{new2.newa}"
+										ui:field="giftExchange" />
+								</li>
+								<li class="{new2.on}">
+									<g:Anchor text="员工天地" styleName="{new2.newa}"
+										ui:field="staffCorner" />
+								</li>
+							</ul>
+							<div class="{new2.green}">
+								<g:InlineLabel ui:field="message"></g:InlineLabel>
+								<g:Anchor ui:field="logBtn" styleName="{new2.newa}">安全退出</g:Anchor>
+								<g:Anchor ui:field="collectionBtn" styleName="{new2.newa}">加为收藏
+								</g:Anchor>
+							</div>
+						</div>
+						<g:Image resource="{logo_new}" styleName="{new2.logo}"
+							width="255px" height="75px" />
+						<div class="{new2.nav} {new2.clearfix}">
+							<ul>
+								<li>
+									<g:Anchor styleName="{new2.menu} {new2.menu-on}" ui:field="staffHeavenIndex">
+										<span>首 页</span>
+									</g:Anchor>
+								</li>
+								<li>
+									<g:Anchor styleName="{new2.menu}" ui:field="staffAnchor">
+										<span>同 事</span>
+									</g:Anchor>
+								</li>
+								<li>
+									<g:Anchor styleName="{new2.menu}" ui:field="corpBroadcastAnchor">
+										<span>公司广播</span>
+									</g:Anchor>
+								</li>
+								<li>
+									<g:Anchor styleName="{new2.menu}" ui:field="gloryAnchor">
+										<span>光荣榜</span>
+									</g:Anchor>
+								</li>
+								<li>
+									<g:Anchor styleName="{new2.menu}" ui:field="settingAnchor">
+										<span>设 置</span>
+									</g:Anchor>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!--head ]] -->
+				
+		
+	
+
+
+		
+
+				  <!--content [[-->
+				  <div class="{new2.content} {new2.clearfix}">
+				    <!-- 导航 [[-->
+				    <div class="{new2.menu-nav}">
+				      <h3>员工天地</h3>
+				      <div>
+				        <span class="{new2.menu-border-top}"></span>
+				        <div class="{new2.menu-content}">
+				          <div class="{new2.employee-info}">
+				            <div class="{new2.employee-ps-wrap} {new2.clearfix}">
+				              <g:Image ui:field="photo" pixelSize="70,70" />
+				              <div class="{new2.employee-ps}">
+				                <strong><g:InlineLabel ui:field="staffName" /> </strong>
+				               <g:Anchor ui:field="staffInfo" >个人资料</g:Anchor>
+				                <a href="#">账户设置</a>
+				                <g:Anchor ui:field="password" >密码修改</g:Anchor>
+				              </div>
+				            </div>
+				            <div class="{new2.employee-detail}">
+				           <!--    <p>性别：<span>男</span></p>--> 
+				              <p>岗位： <span> <g:InlineLabel ui:field="station" /> </span></p>
+				              <p>所属部门：<span> <g:InlineLabel ui:field="deptName" /></span></p>
+				              <p>积分余额：<span class="{new2.color-orange}"><g:InlineLabel ui:field="integral" /></span> 积分</p>
+				            </div>
+				          </div>
+				
+				          <ul class="{new2.employee-menu}">
+
+				            <li  class="{new2.on}"><g:Anchor ui:field="viewPoints" styleName="{new2.staffa}"> <span class="{new2.liimg}"></span>查看积分</g:Anchor></li>
+				            <li><g:Anchor ui:field="winninghistory" styleName="{new2.staffa}"> <span class="{new2.liimg}"></span>获奖历史</g:Anchor></li>
+				            <li><g:Anchor ui:field="participationAwards" styleName="{new2.staffa}"> <span class="{new2.liimg}"></span>我参与的奖项</g:Anchor></li>
+				            <li><g:Anchor ui:field="otherAwards" styleName="{new2.staffa}"> <span class="{new2.liimg}"></span>公司其他奖项</g:Anchor></li>
+				            <li><g:Anchor ui:field="awardShop" styleName="{new2.staffa}"> <span class="{new2.liimg}"></span>奖品商城</g:Anchor></li>
+				            <li><g:Anchor ui:field="exchangeHistory" styleName="{new2.staffa}"> <span class="{new2.liimg}"></span>兑换历史</g:Anchor></li>
+				            <li><g:Anchor ui:field="myMessage" styleName="{new2.staffa}"> <span class="{new2.liimg}"></span>我的消息</g:Anchor></li>
+
+		
+				          </ul>
+				
+				          <div class="{new2.encash}">
+				            <h3><span><g:InlineLabel ui:field="integral2" /></span> 积分，能换什么？</h3>
+				            <div class="{new2.gift-list} {new2.clearfix}">
+								<g:FlowPanel ui:field="smaillShopWindow" />
+				              <p><g:Anchor styleName="{new2.more}" text="还有什么，去看看&gt;&gt;" ui:field="more" /> </p>
+				            </div>
+				          </div>
+				        </div>
+				        <span class="{new2.menu-border-bottom}"></span>
+				      </div>
+				    </div>
+				    <!-- 导航 ]]-->
+				
+	
+	<g:FlowPanel ui:field="dock" />
+	
+				 <div class="{new2.reward-area}">
+			        <div class="{new2.reward-section}">
+			          <ul class="{new2.reward-select}">
+			            <li class="{new2.on}"><g:Anchor ui:field="myWinReward" text="我获得的奖项" /> </li>
+			            <li><g:Anchor ui:field="allReward" text="全部奖项" /></li>
+			          </ul>
+			          <ul class="{new2.reward-list}">
+			          <g:FlowPanel ui:field="rewardPanel" styleName="{new2.panelClass}" />
+			          </ul>
+			        
+			          <p><a href="#">更多&gt;&gt;</a></p>
+			        </div>
+			
+			        <div class="{new2.reward-section}">
+			          <ul class="{new2.reward-select}">
+			            <li class="{new2.on}"> <g:Anchor ui:field="effortRewardItem" text="努力冲奖项" /></li>
+			            <li><g:Anchor ui:field="allRewardItem" text="公司所有奖项" /></li>
+			          </ul>
+			          <ul class="{new2.reward-list} {new2.reward-pslist}">
+			             <g:FlowPanel ui:field="rewardItemPanel" styleName="{new2.panelClass}" />
+			          </ul>
+			          <p><a href="#">更多&gt;&gt;</a></p>
+			        </div>
+			      </div>
+	   </div>
+						<div class="{new2.footer}" id="footer">
+						<div class="{new2.footer-line}"></div>
+						<div class="{new2.footer-wrap}">
+							<div class="{new2.copyright}">
+								<p>版权所有 深圳积享通信息技术有限公司 粤ICP备09007295</p>
+								<p>电话：0755-82671268 传真：0755-86271610</p>
+							</div>
+						</div>
+					</div>
+					</div>
+					</g:HTMLPanel>
+</g:ScrollPanel>
+</ui:UiBinder>

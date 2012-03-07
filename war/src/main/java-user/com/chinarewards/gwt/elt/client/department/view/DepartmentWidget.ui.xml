@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:p1="urn:import:com.google.gwt.user.cellview.client"
+	xmlns:d='urn:import:com.google.gwt.user.datepicker.client'>
+
+	<ui:style src="new2.css" field="new2"></ui:style>
+
+	<g:HTMLPanel styleName="{new2.frame-wrap}">
+		<!--面包屑 [[ -->
+		<g:FlowPanel ui:field="breadCrumbs" />
+		<!--面包屑 ]] -->
+
+		<h3>
+			<g:InlineLabel ui:field="departmentNameLabel" />
+		</h3>
+		<span class="{new2.cutline}"></span>
+		<!-- 1内容 -->
+		<div class="{new2.content-wrap}">
+			<div class="{new2.form}">
+				<div class="{new2.form-line}">
+					<label class="{new2.label}">
+						<span style="color:red">*</span>
+						部门名称：
+					</label>
+					<div class="{new2.element}">
+						<g:Hidden ui:field="departmentId"></g:Hidden>
+						<g:TextBox maxLength="20" ui:field="departmentName"
+							styleName="{new2.text}" />
+					</div>
+				</div>
+				<div class="{new2.form-line}">
+					<label class="{new2.label2}">
+						部门经理(总监)：
+					</label>
+					<div class="{new2.element}">
+						<g:FlowPanel ui:field="leaderPanel" width="200px"/>
+						<g:FlowPanel ui:field="preLeaderPanel" width="200px" visible="false"/>
+						
+					<span class="{new2.btn}">	<g:Button ui:field="chooseLeaderBtn">选择</g:Button></span>
+						
+					</div>
+				</div>			
+				
+				<div class="{new2.form-line}">
+					<label class="{new2.label}">上级部门：</label>
+					<div class="{new2.element}">
+						<g:Hidden ui:field="parentId" />
+						<g:Label  ui:field="parentName" />
+					</div>
+				</div>
+				<div class="{new2.form-line}">
+					<label class="{new2.label}">下一级子部门：</label>
+					<div class="{new2.element}">
+						<g:Label ui:field="childdepartment"  />
+					</div>
+				</div>
+				<div class="{new2.form-line}">
+					<label class="{new2.label}">部门人数：</label>
+					<div class="{new2.element}">
+						<g:Label ui:field="peopleNumber" />
+					</div>
+				</div>
+				<div class="{new2.form-line}">
+					<label class="{new2.label}">财年积分度：</label>
+					<div class="{new2.element}">
+						<g:Label ui:field="yearintegral"  />
+					</div>
+				</div>
+				<div class="{new2.form-line}">
+					<label class="{new2.label}">已颁发积分：</label>
+					<div class="{new2.element}">
+						<g:Label ui:field="issueintegral"  />
+					</div>
+				</div>
+				<div class="{new2.form-line}">
+					<label class="{new2.label}">进行中奖项：</label>
+					<div class="{new2.element}">
+						<g:Label ui:field="procesRewarditemCount"  />
+					</div>
+				</div>
+				<span class="{new2.cutline}"></span>
+				<div class="{new2.form-line} {new2.form-line-btn}">
+					<div class="{new2.element}">
+						<span class="{new2.btn}">
+							<g:Button ui:field="save">保存</g:Button>
+						</span>
+						<span class="{new2.nbsp}"></span>
+						<span class="{new2.btn}">
+							<g:Button ui:field="back" styleName="button-ok">返回 </g:Button>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder>

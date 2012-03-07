@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+   	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:p1="urn:import:com.google.gwt.user.cellview.client"
+   	xmlns:d='urn:import:com.google.gwt.user.datepicker.client'>
+   	
+   	<ui:image resource="input_text.jpg" field="input_text" repeatStyle="Horizontal"></ui:image>
+	<ui:image resource="preview_bg.jpg" field="preview_bg" repeatStyle="Horizontal"></ui:image>
+	<ui:image field="post_bg" resource="post_bg.jpg" repeatStyle="Horizontal"></ui:image>
+	<ui:style src="rewardsItem.css" field="item"></ui:style>
+	<ui:style src="elt_min.css" field="newitem"></ui:style>
+	<g:HTMLPanel styleName="{newitem.frame-wrap}">
+	
+	<!-- add form tag, using to resolve radioButton groupname -->
+		 <!--面包屑 [[ -->
+		<g:FlowPanel ui:field="breadCrumbs" />
+		 <!--面包屑 ]] -->
+				<!-- 1内容 -->
+                <div class="{newitem.content-wrap}"> 
+                 
+                   <div   class="{newitem.form}">
+                      <div class="{newitem.form-line}">
+                        <label class="{newitem.label}"> 奖项名称：</label>
+                        <div  class="{newitem.element}" ><g:Label ui:field="rewardsName" />
+                      	</div>
+                      </div>
+                      
+                      <div class="{newitem.form-line}">
+                        <label class="{newitem.label}"> 奖项说明：</label>
+                        <div  class="{newitem.element}" ><g:Label ui:field="rewardsDefinition"   />
+                    	</div>
+                      </div>
+                      <div class="{newitem.form-line}">
+                        <label class="{newitem.label}"> 奖项条件：</label>
+                        <div  class="{newitem.element}" ><g:Label ui:field="standard"   />
+                     	</div>
+                      </div>
+					  <div class="{newitem.form-line}">
+                        <label class="{newitem.label}"> 获奖名额：</label>
+                        <div  class="{newitem.element}" ><g:Label ui:field="peopleSizeLimit" />
+                       </div>
+                      </div>
+                      <div class="{newitem.form-line}">
+                        <label class="{newitem.label}"> 总积分：</label>
+                        <div  class="{newitem.element}" ><g:Label ui:field="totalJF" />
+                     	</div>
+                      </div>
+                      <div class="{newitem.form-line}">
+                        <label class="{newitem.label}"> 每人得奖积分：</label>
+                        <div  class="{newitem.element}" ><g:Label ui:field="rewardsFrom" />
+                     	</div>
+                      </div>
+                       <div id="tm">
+                       <div class="{newitem.form-line}">
+				           <label class="{newitem.label}"> 提名人：</label>
+				           <div  class="{newitem.element}" ><g:FlowPanel ui:field="staffAreaPanel" /> 
+				         </div>     
+				       </div>
+				       </div>
+                      <div class="{newitem.form-line}">
+				            <label class="{newitem.label}"> 候选人：</label>
+				            <div  class="{newitem.element}" ><g:FlowPanel ui:field="staffPanel" />
+				        </div>       
+				       </div>
+                     
+					  <div class="{newitem.form-line}">
+					  <label class="{newitem.label}">奖项模式：</label>
+					   <div   class="{newitem.element}"  ><g:Label ui:field="itemModel" />
+					   </div>
+					  </div>
+					  
+					  <div class="{newitem.form-line}">
+					  <label class="{newitem.label}">开始时间：</label>
+					   <div   class="{newitem.element}"  ><g:Label ui:field="startTime" />
+					   </div>
+					  </div>
+                       
+                      
+                     <div id="ones">
+                      <div class="{newitem.form-line}">
+                        <label class="{newitem.label}">预计颁奖时间：</label>
+                        <div  class="{newitem.element}" ><g:InlineLabel ui:field="expectTime" />     提前<g:InlineLabel ui:field="tmdays" />天提名
+						</div>
+                      </div>
+                      </div>
+                      <div id="period"> 
+                       <div class="{newitem.form-line}">
+                        <label class="{newitem.label}">下次颁奖时间：</label>
+                        <div  class="{newitem.element}" ><g:InlineLabel ui:field="nextRewardsTime"  />   提前<g:InlineLabel ui:field="tmday" />天提名
+						</div>
+                      </div>                     	
+                      <div class="{newitem.form-line}">
+                        <label class="{newitem.label}"> 颁奖周期： </label>
+                        <div  class="{newitem.element}" ><g:Label ui:field="settingText" />
+                       	</div>
+                      </div>
+                      
+                      <div class="{newitem.form-line}">
+                        <label class="{newitem.label}">自动颁奖： </label>
+                        <div  class="{newitem.element}" ><g:CheckBox ui:field="autoCbx" />
+                       	</div>
+                      </div>
+                     
+                     
+                      <div class="{newitem.form-line}">
+                        <label class="{newitem.label}">下次公布时间：</label>
+                        <div  class="{newitem.element}" ><g:Label ui:field="nextPublicTime" />
+                        </div>
+                      </div>
+                      
+                      <div class="{newitem.form-line}">
+                        <label class="{newitem.label}">特殊条件：</label>
+                        <div  class="{newitem.element}" ><g:CheckBox ui:field="specialCbx"></g:CheckBox><g:RadioButton ui:field="birthRadio" name="condition"> 员工生日</g:RadioButton>
+                        </div>
+                      </div>
+                      </div>
+                      
+                      
+                      
+                   <span class="{newitem.cutline}"></span>
+                       
+                      <div class="{newitem.form-line}">
+				        <div class="{newitem.element}">
+				       		<span class="{newitem.btn}">  <g:Button ui:field="back" styleName="button-ok">返回 </g:Button></span>
+					   		<span class="{newitem.btn}">  <g:Button ui:field="update" styleName="button-ok">修改 </g:Button></span>
+					   		<span class="{newitem.btn}">  <g:Button ui:field="backStore" styleName="button-ok">返回</g:Button></span>
+					   		<span class="{newitem.btn}">  <g:Button ui:field="updateStore" styleName="button-ok">修改 </g:Button></span>
+				        </div>
+				      </div>
+				      
+				      
+                 
+                  </div>	
+				
+		</div>		
+	</g:HTMLPanel>
+</ui:UiBinder>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui' xmlns:d='urn:import:com.google.gwt.user.datepicker.client'
+	xmlns:c="urn:import:com.google.gwt.user.cellview.client">
+
+	<ui:style src="new2.css" field="new2"></ui:style>
+	<g:HTMLPanel>
+		<div class="{new2.frame-wrapdialog}" style="width:550px;">
+			<!--查询条件 [[ -->
+			<div class="{new2.query-wrapstaff}">
+				<div class="{new2.form}">
+					<g:RadioButton text="员工" name="radioCheckBox"
+						ui:field="radioStaff" checked="true" />
+					<g:RadioButton text="部门" name="radioCheckBox"
+						ui:field="radioDept" />
+					<g:RadioButton text="小组" name="radioCheckBox"
+						ui:field="radioGroup" />
+					<g:RadioButton text="机构" name="radioCheckBox"
+						ui:field="radioOrg" />
+				</div>
+				<div class="{new2.form}">
+					<label for="">查询条件(名称)：</label>
+					<g:TextBox maxLength="10" ui:field="name" styleName="{new2.textstaff}" />
+
+					<span class="{new2.nbsp}"></span>
+
+					<div class="{new2.remark} {new2.remark-info}">
+						<div class="{new2.remark-tool}" style="text-align:right;">
+							<g:Button styleName="{new2.button}" ui:field="searchBtn"
+								text="查询" />
+							<g:Button styleName="{new2.button}" ui:field="resetBtn"
+								text="重置" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--查询条件 ]] -->
+
+
+			<span class="{new2.cutline}"></span>
+
+			<div class="{new2.table}">
+				<g:FlowPanel ui:field="result" />
+			</div>
+
+
+			<!--分页 [[ -->
+			<div id="rewardlist_page2" class="{new2.pagerstaff}">
+
+
+				<div class="{new2.pager-right}">
+					<g:FlowPanel ui:field="resultpage" />
+				</div>
+			</div>
+			<!--分页 ]] -->
+
+
+
+
+
+			<span class="{new2.cutline}"></span>
+			<div class="{new2.query-wrapstaff2}">
+				<g:InlineLabel ui:field="addLabel" text="准备添加："
+					styleName="{new2.label}" />
+				<g:FlowPanel ui:field="specialBoxPanel" />
+
+			</div>
+
+
+
+			<div class="{new2.remark2} {new2.remark-info}">
+				<div class="{new2.remark-tool}" style="text-align:right;">
+					<g:Button styleName="{new2.button}" ui:field="chooseBtn"
+						text="确定" />
+					<g:Button styleName="{new2.button}" ui:field="cancelBtn"
+						text="取消" />
+				</div>
+			</div>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:p1="urn:import:com.google.gwt.user.cellview.client"
+	xmlns:d='urn:import:com.google.gwt.user.datepicker.client'>
+	<ui:style src="new2.css" field="new2"></ui:style>
+	<g:HTMLPanel>
+		<div class="{new2.remark-list}">
+		      <div class="{new2.remark-list-info} {new2.clearfix}">
+                <g:Image ui:field="photo" pixelSize="30,30" />
+                <div class="{new2.remark-info-wrap}">
+                  <p><span class="{new2.remark-name}"><g:InlineLabel ui:field="staffName" /></span> 说：<span class="{new2.remark-content}"><g:InlineLabel ui:field="content" /></span></p>
+                  <p><span><g:InlineLabel ui:field="createDate" /></span> <g:Anchor text="回复" ui:field="replyBtn" /> </p>
+                  <g:FlowPanel ui:field="leafPanel" />
+                </div>
+              </div>
+            </div>
+	</g:HTMLPanel>
+</ui:UiBinder> 

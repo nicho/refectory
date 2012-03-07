@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<module rename-to="elt">
+	<inherits name="com.google.gwt.user.User" />
+	<inherits name="com.google.gwt.i18n.I18N" />
+	<inherits name='com.google.gwt.user.theme.standard.Standard' />
+	<inherits name="com.google.gwt.inject.Inject" />
+	<inherits name="com.google.gwt.xml.XML" />
+
+	<inherits name="net.customware.gwt.dispatch.Dispatch" />
+
+	<source path="client" />
+	<source path="model" />
+	<source path="util" />
+	  
+	<!-- Specify the app entry point class. -->
+	<entry-point class="com.chinarewards.gwt.elt.client.Elt" />
+
+	<set-property name="user.agent" value="gecko1_8,safari,opera,ie8,ie9" />
+<!---->
+	<!--
+	<set-property name="user.agent" value="gecko1_8" />-->
+
+	<stylesheet src="elt.css" />                      
+	
+	<!-- 指定编译输出 geck01_8:firefox -->
+	<!-- <set-property name="user.agent" value="ie9" /> -->
+
+	<!-- 
+	<set-property name="user.agent" value="safari" />
+    <set-property name="user.agent" value="ie8" />
+    <set-property name="user.agent" value="ie9" />
+    <set-property name="user.agent" value="opera" /> -->                   
+</module>

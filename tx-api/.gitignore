@@ -1,0 +1,6 @@
+/.settings
+/target
+/bin
+/war
+.classpath
+.project

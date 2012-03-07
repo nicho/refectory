@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:p1="urn:import:com.google.gwt.user.cellview.client"
+	xmlns:d='urn:import:com.google.gwt.user.datepicker.client'>
+
+	<ui:style src="new2.css" field="new2"></ui:style>
+	<g:HTMLPanel>
+		<div class="{new2.employee}">
+
+			<div class="{new2.content-wrap}">
+				<div class="{new2.content-info}">
+					<div class="{new2.breadcrumb}">
+						<a href="#">首页</a>
+						&gt;
+						<span>个人资料</span>
+					</div>
+	
+
+					<h3>员工详细信息
+					</h3>
+					<span class="{new2.cutline}"></span>
+
+					<div class="{new2.form}">
+						<div class="{new2.form-line}">
+							<label class="{new2.label}">员工编号：</label>
+							<div class="{new2.element}">
+								<g:InlineLabel ui:field="staffNo" />
+							</div>
+						</div>
+						<div class="{new2.form-line}">
+							<label class="{new2.label}">员工名称：</label>
+							<div class="{new2.element}">
+								<g:InlineLabel ui:field="staffName" />
+
+							</div>
+						</div>
+						
+				 <div class="{new2.form-line}">
+						<label class="{new2.label2}">头像：</label>
+						<div class="{new2.element}">
+							<g:FormPanel ui:field="photoForm" encoding="multipart/form-data"
+								method="post">
+								<g:FileUpload ui:field="photoUpload" name="uploadFormElement"></g:FileUpload>
+							</g:FormPanel>
+							<g:TextBox ui:field="photo" visible="false"></g:TextBox>
+							<g:Button ui:field="photoUploadBtn" visible="false">上传
+							</g:Button>
+						</div>
+					</div>
+						
+						<div class="{new2.form-line}">
+							<label class="{new2.labelphoto}"></label>
+							<div class="{new2.elementphoto}">
+								<g:Image ui:field="staffImage" pixelSize="80,60"/>
+							</div>
+						</div>
+
+						<div class="{new2.form-line}">
+							<label class="{new2.label}">所属部门：</label>
+							<div class="{new2.element}">
+								<g:InlineLabel ui:field="departmentName" />
+							</div>
+						</div>
+						<div class="{new2.form-line}">
+							<label class="{new2.label}">所属职位：</label>
+							<div class="{new2.element}">
+								<g:InlineLabel ui:field="jobPosition" />
+							</div>
+						</div>
+						<div class="{new2.form-line}">
+							<label class="{new2.label}">直属领导：</label>
+							<div class="{new2.element}">
+
+								<g:InlineLabel ui:field="leadership" />
+							</div>
+						</div>
+
+						<div class="{new2.form-line}">
+							<label class="{new2.label}">电话：</label>
+							<div class="{new2.element}">
+								<g:TextBox ui:field="phone" styleName="{new2.text}" />
+							</div>
+						</div>
+
+						<div class="{new2.form-line}">
+							<label class="{new2.label}">Email：</label>
+							<div class="{new2.element}">
+								<g:InlineLabel ui:field="email" />
+							</div>
+						</div>
+						<div class="{new2.form-line}">
+							<label class="{new2.label}">员工生日：</label>
+							<div class="{new2.element}">
+								<d:DateBox ui:field="dob" styleName="{new2.text}"/>
+							</div>
+						</div>
+
+					
+
+						<span class="{new2.cutline}"></span>
+
+					</div>
+				</div>
+
+	
+			</div>
+		</div>
+					   <div class="{new2.remark} {new2.remark-info}">		
+							<div class="{new2.remark-tool}" style="text-align:center;">
+				             <g:Button styleName="{new2.button}" text="修改员工信息" ui:field="updateBtn" />
+							</div>
+						</div>
+	</g:HTMLPanel>
+</ui:UiBinder> 

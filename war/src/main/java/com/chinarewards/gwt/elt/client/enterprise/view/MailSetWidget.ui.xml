@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:p1="urn:import:com.google.gwt.user.cellview.client"
+	xmlns:d='urn:import:com.google.gwt.user.datepicker.client'>
+
+	<ui:image resource="input_text.jpg" field="input_text"
+		repeatStyle="Horizontal"></ui:image>
+	<ui:image resource="preview_bg.jpg" field="preview_bg"
+		repeatStyle="Horizontal"></ui:image>
+	<ui:image field="post_bg" resource="post_bg.jpg" repeatStyle="Horizontal"></ui:image>
+	<ui:style src="new2.css" field="new2"></ui:style>
+
+	<g:HTMLPanel styleName="{new2.frame-wrap}">
+	  <!--面包屑 [[ -->
+		<g:FlowPanel ui:field="breadCrumbs" />
+		<!--面包屑 ]] -->
+	
+	  <!-- 1内容 -->
+		<div class="{new2.content-wrap}">
+		  <div class="{new2.form}">
+			<div class="{new2.form-line}">
+				<label class="{new2.label}">
+					<span style="color:red">*</span>
+					企业名称：
+				</label>
+				<div class="{new2.element}">
+					<g:TextBox maxLength="30" ui:field="enterpriseName" styleName="{new2.text}" enabled="false"/>
+				</div>
+			</div>
+			
+			<div class="{new2.form-line}">
+				<label class="{new2.label}">
+				<span style="color:red">*</span>Email：
+				</label>
+				<div class="{new2.element}">
+					<g:TextBox maxLength="30" ui:field="email" styleName="{new2.text}" />
+				</div>
+			</div>
+			<div class="{new2.form-line}">
+				<label class="{new2.label}">
+				<span style="color:red">*</span>邮箱密码：
+				</label>
+				<div class="{new2.element}">
+					<g:PasswordTextBox maxLength="30" ui:field="password" styleName="{new2.text}" />
+				</div>
+			</div>
+			
+			<div class="{new2.form-line}">
+				<label class="{new2.label}">
+				<span style="color:red">*</span>STMP协议：
+				</label>
+				<div class="{new2.element}">
+					<g:TextBox maxLength="20" ui:field="smtp" styleName="{new2.text}" />(如:smtp.qq.com;stmp.163.com)
+				</div>
+			</div>
+			
+			
+			<span class="{new2.cutline}"></span>
+				<div class="{new2.form-line} {new2.form-line-btn}">
+					<div class="{new2.element}">
+						
+						<span class="{new2.btn}">
+						<g:Hidden name="Hidden name" width="20px" height="20px" ui:field="enterpriseId"/>
+							<g:Button ui:field="saveButton">确定</g:Button>
+						</span>
+					</div>
+				</div>
+			
+			
+			
+	  </div>
+	  </div>
+		
+	</g:HTMLPanel>
+</ui:UiBinder> 

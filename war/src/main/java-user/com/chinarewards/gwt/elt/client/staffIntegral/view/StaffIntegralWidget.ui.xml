@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:p1="urn:import:com.google.gwt.user.cellview.client"
+	xmlns:d='urn:import:com.google.gwt.user.datepicker.client'>
+
+	<ui:style src="new1.css" field="new2"></ui:style>
+	<g:HTMLPanel>
+		<div class="{new2.employee}">
+			<div class="{new2.content-wrap}">
+				<div class="{new2.content-info}">
+					<div class="{new2.breadcrumb}">
+						<a href="#">首页</a>
+						&gt;
+						<span>查看积分</span>
+					</div>
+				</div>
+				<div class="{new2.frame-wrap}">
+					<div class="{new2.query-wrap}">
+						<span>
+							<h3>我的积分</h3>
+						</span>
+						<div class="{new2.form}">
+							<div class="{new2.table}">
+
+								<div class="{new2.element}">
+									<label class="{new2.label}">获得的总积分：</label>
+									<g:InlineLabel ui:field="historyIntegral" />
+									分
+									<span class="{new2.nbsp}"></span>
+									<span class="{new2.nbsp}"></span>
+									<span class="{new2.nbsp}"></span>
+									<label class="{new2.label}">剩余积分：</label>
+									<span class="{new2.nbsp}"></span>
+									<g:InlineLabel ui:field="balanceIntegral" />
+									分
+								</div>
+								<div class="{new2.element}">
+									<label class="{new2.label}">已消费积分：</label>
+									<span class="{new2.nbsp}"></span>
+									<span class="{new2.nbsp}"></span>
+									<g:InlineLabel ui:field="consumptionIntegral" />
+									分
+								</div>
+
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<g:FlowPanel ui:field="shopWindow" />
+	</g:HTMLPanel>
+</ui:UiBinder> 

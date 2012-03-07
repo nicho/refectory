@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:p1="urn:import:com.google.gwt.user.cellview.client"
+	xmlns:d='urn:import:com.google.gwt.user.datepicker.client'>
+
+	<ui:image resource="input_text.jpg" field="input_text"
+		repeatStyle="Horizontal"></ui:image>
+	<ui:image resource="preview_bg.jpg" field="preview_bg"
+		repeatStyle="Horizontal"></ui:image>
+	<ui:image field="post_bg" resource="post_bg.jpg" repeatStyle="Horizontal"></ui:image>
+	<ui:style src="new2.css" field="new2"></ui:style>
+
+	<g:HTMLPanel styleName="{new2.frame-wrap}">
+	  <!--面包屑 [[ -->
+		<g:FlowPanel ui:field="breadCrumbs" />
+		<!--面包屑 ]] -->
+	
+	  <!-- 1内容 -->
+		<div class="{new2.content-wrap}">
+		  <div class="{new2.form}">
+			<div class="{new2.form-line}">
+				<label class="{new2.label}">
+					<span style="color:red">*</span>
+					企业名称：
+				</label>
+				<div class="{new2.element}">
+					<g:TextBox maxLength="30" ui:field="enterpriseName" styleName="{new2.text}" />
+				</div>
+			</div>
+			<div class="{new2.form-line}">
+				<label class="{new2.label}">
+					<span style="color:red">*</span>
+					法人：
+				</label>
+				<div class="{new2.element}">
+					<g:TextBox maxLength="20" ui:field="corporation" styleName="{new2.text}" />
+				</div>
+			</div>
+			<div class="{new2.form-line}">
+				<label class="{new2.label}">
+					
+					企业地址：
+				</label>
+				<div class="{new2.element}">
+					<g:TextBox maxLength="20" ui:field="address" styleName="{new2.text}" />
+				</div>
+			</div>
+			<div class="{new2.form-line}">
+				<label class="{new2.label}">
+				联系人：
+				</label>
+				<div class="{new2.element}">
+					<g:TextBox maxLength="20" ui:field="linkman" styleName="{new2.text}" />
+				</div>
+			</div>
+			<div class="{new2.form-line}">
+				<label class="{new2.label}">
+				联系电话：
+				</label>
+				<div class="{new2.element}">
+					<g:TextBox maxLength="20" ui:field="tell" styleName="{new2.text}" />
+				</div>
+			</div>
+			<div class="{new2.form-line}">
+				<label class="{new2.label}">
+				手机号：
+				</label>
+				<div class="{new2.element}">
+					<g:TextBox maxLength="20" ui:field="cellphone" styleName="{new2.text}" />
+				</div>
+			</div>
+			<div class="{new2.form-line}">
+				<label class="{new2.label}">
+				Email：
+				</label>
+				<div class="{new2.element}">
+					<g:TextBox maxLength="20" ui:field="email" styleName="{new2.text}" />
+				</div>
+			</div>
+			<div class="{new2.form-line}">
+				<label class="{new2.label}">
+				网站：
+				</label>
+				<div class="{new2.element}">
+					<g:TextBox maxLength="20" ui:field="web" styleName="{new2.text}" />
+				</div>
+			</div>
+			
+			<div class="{new2.form-line}">
+				<label class="{new2.label}">
+				传真：
+				</label>
+				<div class="{new2.element}">
+					<g:TextBox maxLength="20" ui:field="fax" styleName="{new2.text}" />
+				</div>
+			</div>
+			<div class="{new2.form-line}">
+				<label class="{new2.label6}">
+				备注：
+				</label>
+				<div class="{new2.element}">
+					<g:TextArea ui:field="remark" visibleLines="3"
+							styleName="{new2.textarea}" />
+				</div>
+			</div>
+			
+			<span class="{new2.cutline}"></span>
+				<div class="{new2.form-line} {new2.form-line-btn}">
+					<div class="{new2.element}">
+						
+						<span class="{new2.btn}">
+						<g:Hidden name="Hidden name" width="20px" height="20px" ui:field="enterpriseId"/>
+							<g:Button ui:field="saveButton">确定</g:Button>
+						</span>
+					</div>
+				</div>
+			
+			
+			
+	  </div>
+	  </div>
+		
+	</g:HTMLPanel>
+</ui:UiBinder> 

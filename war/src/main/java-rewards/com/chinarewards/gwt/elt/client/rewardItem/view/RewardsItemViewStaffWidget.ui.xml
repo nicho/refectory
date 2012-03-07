@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:p1="urn:import:com.google.gwt.user.cellview.client"
+	xmlns:d='urn:import:com.google.gwt.user.datepicker.client'>
+
+	<ui:style src="new1.css" field="new2"></ui:style>
+	<g:HTMLPanel>
+		<div class="{new2.employee}">
+
+			<div class="{new2.content-wrap}">
+				<div class="{new2.content-info}">
+					<div class="{new2.breadcrumb}">
+						<a href="#">首页</a>
+						&gt;
+						<span>查看奖项</span>
+					</div>
+
+					<div class="{new2.order-detail}">
+						<h3>奖项详细</h3>
+						<div class="{new2.order-section}">
+							<p>
+								<span class="{new2.order-field}"> 奖项名称：</span>
+								<g:InlineLabel ui:field="rewardsName" />
+							</p>
+							<p>
+								<span class="{new2.order-field}">奖项说明：</span>
+								<g:InlineLabel ui:field="rewardsDefinition" />
+							</p>
+							<p>
+								<span class="{new2.order-field}">奖项条件：</span>
+
+								<g:InlineLabel ui:field="standard" />
+							</p>
+							<p>
+								<span class="{new2.order-field}">获奖名额：</span>
+
+								<g:InlineLabel ui:field="peopleSizeLimit" />
+							</p>
+							<p>
+								<span class="{new2.order-field}">总积分：</span>
+								<g:InlineLabel ui:field="totalJF" />
+							</p>
+							<p>
+								<span class="{new2.order-field}">提名人：<g:FlowPanel ui:field="staffAreaPanel" /></span>
+							</p>
+							<p>
+								<span class="{new2.order-field}">候选人：</span>
+								<g:FlowPanel ui:field="staffPanel" />
+							</p>
+							<p>
+								<span class="{new2.order-field}">奖项模式：</span>
+								<g:InlineLabel ui:field="itemModel" />
+							</p>
+							<p>
+								<span class="{new2.order-field}">开始时间：</span>
+								<g:InlineLabel ui:field="startTime" />
+							</p>
+							<p>
+								<span class="{new2.order-field}">颁奖周期： </span>
+								<g:InlineLabel ui:field="settingText" />
+							</p>
+							<span class="{new2.cutline}"></span>
+
+							<p class="{new2.back-btn-wrap}">
+								<span class="{new2.blue-btn}">
+									<g:Button ui:field="back" styleName="button-ok">返回 </g:Button>
+								</span>
+								<span class="{new2.blue-btn}">
+									<g:Button ui:field="update" styleName="button-ok">修改 </g:Button>
+								</span>
+							</p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder>

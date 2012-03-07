@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:p1="urn:import:com.google.gwt.user.cellview.client"
+	xmlns:d='urn:import:com.google.gwt.user.datepicker.client'>
+	<ui:style src="new2.css" field="new2"></ui:style>
+	<g:HTMLPanel>
+         
+             <div class="{new2.remark}">
+                <div class="{new2.clearfix}">
+                  <g:Image ui:field="photo" pixelSize="50,50" />
+                  <div class="{new2.remark-info}">
+                    <g:TextArea styleName="{new2.textarea}" ui:field="replyContent" />
+                    <div class="{new2.remark-tool}">
+                      <g:Button styleName="{new2.button}" text="回复" ui:field="replyBtn" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+	</g:HTMLPanel>
+</ui:UiBinder> 
