@@ -271,8 +271,9 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-site-plugin</artifactId>
-					<!-- <configuration> <argLine>-Xmx1024m</argLine> <disableXmlReport>true</disableXmlReport> 
-						</configuration> -->
+					 <configuration> <argLine>-Xmx1024m</argLine>
+					  <disableXmlReport>true</disableXmlReport> 
+						</configuration> 
 				</plugin>
 
 				<!-- maven-eclipse-plugin -->
