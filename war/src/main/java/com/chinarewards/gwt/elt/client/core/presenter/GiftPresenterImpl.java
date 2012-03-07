@@ -9,20 +9,14 @@ import com.chinarewards.gwt.elt.client.EltGinjector;
 import com.chinarewards.gwt.elt.client.core.PluginManager;
 import com.chinarewards.gwt.elt.client.core.presenter.GiftPresenter.GiftDisplay;
 import com.chinarewards.gwt.elt.client.core.ui.MenuProcessor;
-import com.chinarewards.gwt.elt.client.core.ui.event.MenuClickEvent;
-import com.chinarewards.gwt.elt.client.gift.plugin.GiftListConstants;
-import com.chinarewards.gwt.elt.client.login.LastLoginRoleRequest;
-import com.chinarewards.gwt.elt.client.login.LastLoginRoleResponse;
 import com.chinarewards.gwt.elt.client.login.event.LoginEvent;
 import com.chinarewards.gwt.elt.client.mvp.BasePresenter;
 import com.chinarewards.gwt.elt.client.mvp.EventBus;
-import com.chinarewards.gwt.elt.client.order.plugin.OrderViewConstants;
 import com.chinarewards.gwt.elt.client.support.SessionManager;
 import com.chinarewards.gwt.elt.model.user.UserRoleVo;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.inject.Inject;
 
 public class GiftPresenterImpl extends BasePresenter<GiftDisplay> implements
@@ -78,94 +72,7 @@ public class GiftPresenterImpl extends BasePresenter<GiftDisplay> implements
 				Window.alert("收藏");
 			}
 		}));
-		registerHandler(display.getBtnEmail().addClickHandler(
-				new ClickHandler() {
-					@Override
-					public void onClick(ClickEvent event) {
-						display.setMenuTitle("收件箱");
-						menuProcessor.initrender(display.getMenu(), "Box");
-						eventBus.fireEvent(new MenuClickEvent(
-								menuProcessor
-										.getMenuItem(OrderViewConstants.MENU_ORDERBOX_SEARCH)));
-					}
-				}));
-		registerHandler(display.getBtnGb().addClickHandler(new ClickHandler() {
-			@Override
-			public void onClick(ClickEvent event) {
-				display.setMenuTitle("广播");
-				display.setMenu(null);
-			}
-		}));
-		
-		registerHandler(display.getBtnGift().addClickHandler(
-				new ClickHandler() {
-					@Override
-					public void onClick(ClickEvent event) {
-						display.setMenuTitle("兑换管理");
-						menuProcessor.initrender(display.getMenu(), "Gift");
-						eventBus.fireEvent(new MenuClickEvent(
-								menuProcessor
-										.getMenuItem(GiftListConstants.MENU_GIFTLIST_SEARCH)));
-					}
-				}));
-		registerHandler(display.getManagementCenter().addClickHandler(
-				new ClickHandler() {
-					@Override
-					public void onClick(ClickEvent event) {
-						UserRoleVo role=UserRoleVo.DEPT_MGR;
-						
-						for (int i = 0; i < sessionManager.getSession().getUserRoles().length; i++) {
-							if(UserRoleVo.CORP_ADMIN==sessionManager.getSession().getUserRoles()[i])
-							{
-								role=UserRoleVo.CORP_ADMIN;
-							}
-						}
-						
-						dispatchAsync.execute(new LastLoginRoleRequest(sessionManager.getSession().getToken(),role),
-								new AsyncCallback<LastLoginRoleResponse>() {
 	
-									@Override
-									public void onFailure(Throwable e) {
-									//	Window.alert("系统切换出错");
-									}
-	
-									@Override
-									public void onSuccess(LastLoginRoleResponse resp) {
-										// 成功
-										if ("success".equals(resp.getFal()))
-											Window.Location.reload();
-										else
-											Window.alert("系统切换出错");
-										
-									}
-								});
-					}
-				}));
-		registerHandler(display.getStaffCorner().addClickHandler(
-				new ClickHandler() {
-					@Override
-					public void onClick(ClickEvent event) {
-						dispatchAsync.execute(new LastLoginRoleRequest(sessionManager.getSession().getToken(),UserRoleVo.STAFF),
-								new AsyncCallback<LastLoginRoleResponse>() {
-	
-									@Override
-									public void onFailure(Throwable e) {
-									//	Window.alert("系统切换出错");
-									}
-	
-									@Override
-									public void onSuccess(LastLoginRoleResponse resp) {
-										// 成功
-										if ("success".equals(resp.getFal()))
-											Window.Location.reload();
-										else
-											Window.alert("系统切换出错");
-										
-									}
-								});
-					}
-				}));
-
 
 
 	}

@@ -12,10 +12,5 @@ public interface PlatformGinjector extends MVPGinjector, PresentersGinjector {
 
 	@Named("admin")
 	PluginSet getPluginSetAdmin();
-	@Named("dept")
-	PluginSet getPluginSetDept();
-	@Named("staff")
-	PluginSet getPluginSetStaff();
-	@Named("gift")
-	PluginSet getPluginSetGift();
+
 }
