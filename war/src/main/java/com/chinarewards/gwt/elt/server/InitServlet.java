@@ -10,10 +10,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-import com.chinarewards.elt.service.reward.RewardItemService;
-import com.google.inject.Inject;
-
-
 /**
  * Initialize servlet.
  * 
@@ -32,8 +28,8 @@ public class InitServlet extends HttpServlet {
 	private static Timer batchTimer = new Timer();
 
 
-	@Inject
-	RewardItemService rewardItemService;
+//	@Inject
+//	RewardItemService rewardItemService;
 
 	public void init() throws ServletException {
 		// this must be invoked.
@@ -58,7 +54,7 @@ public class InitServlet extends HttpServlet {
 		logger.debug(" begin to autoRewardsTask ");
 		AutoGenerateRewardTask autoGenerateRewardTask = AutoGenerateRewardTask
 				.getInstance();
-		autoGenerateRewardTask.setRewardItemService(rewardItemService);
+//		autoGenerateRewardTask.setRewardItemService(rewardItemService);
 		try {
 			AutoGenerateRewardTask instance = AutoGenerateRewardTask.getInstance();
 			Calendar calendar = Calendar.getInstance();

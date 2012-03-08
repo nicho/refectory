@@ -6,10 +6,7 @@ import java.util.List;
 
 import net.customware.gwt.dispatch.client.DispatchAsync;
 
-
 import com.chinarewards.gwt.elt.client.core.ui.event.PlatformInitEvent;
-import com.chinarewards.gwt.elt.client.login.LastLoginRoleRequest;
-import com.chinarewards.gwt.elt.client.login.LastLoginRoleResponse;
 import com.chinarewards.gwt.elt.client.login.LoginRequest;
 import com.chinarewards.gwt.elt.client.login.LoginResponse;
 import com.chinarewards.gwt.elt.client.login.TokenValidRequest;
@@ -21,13 +18,11 @@ import com.chinarewards.gwt.elt.client.mvp.EventBus;
 import com.chinarewards.gwt.elt.client.support.SessionManager;
 import com.chinarewards.gwt.elt.client.support.UserSession;
 import com.chinarewards.gwt.elt.client.ui.DialogBox;
-import com.chinarewards.gwt.elt.model.user.UserRoleVo;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.user.client.Cookies;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.inject.Inject;
 
@@ -128,79 +123,7 @@ public class CookieSessionManager implements SessionManager {
 			@Override
 			public void onSuccess(LoginResponse resp) {
 				tokenObtained(resp);
-
-				UserRoleVo role = resp.getLastLoginRole();
-				if(role!=null)
-				{
-					if (role == UserRoleVo.CORP_ADMIN)
-						 eventBus.fireEvent(new LoginEvent(LoginEvent.LoginStatus.LOGIN_OK));
-					else if (role == UserRoleVo.DEPT_MGR)
-						 eventBus.fireEvent(new LoginEvent(LoginEvent.LoginStatus.LOGIN_OK_DEPT));
-					else if (role == UserRoleVo.STAFF)
-						 eventBus.fireEvent(new LoginEvent(LoginEvent.LoginStatus.LOGIN_OK_STAFF));
-					else if (role == UserRoleVo.GIFT)
-						eventBus.fireEvent(new LoginEvent(LoginEvent.LoginStatus.LOGIN_OK_GIFT));	
-
-				}
-				else
-				{
-				List <UserRoleVo> roleslt = new ArrayList<UserRoleVo>();
-				UserRoleVo [] roles=resp.getUserRoles();
-				
-					if(roles.length>0)
-					{
-						for (UserRoleVo r:roles) {
-							roleslt.add(r);
-						}
-						
-						if(roleslt.size()>0)
-						{
-							if(roleslt.contains(UserRoleVo.CORP_ADMIN))
-							{
-								 role=UserRoleVo.CORP_ADMIN;
-								 eventBus.fireEvent(new LoginEvent(LoginEvent.LoginStatus.LOGIN_OK));
-							}
-							else if(roleslt.contains(UserRoleVo.DEPT_MGR))
-							{
-								 role=UserRoleVo.DEPT_MGR;
-								 eventBus.fireEvent(new LoginEvent(LoginEvent.LoginStatus.LOGIN_OK_DEPT));
-							}
-							else if(roleslt.contains(UserRoleVo.GIFT))
-							{
-								 role=UserRoleVo.GIFT;
-								 eventBus.fireEvent(new LoginEvent(LoginEvent.LoginStatus.LOGIN_OK_GIFT));							 
-							}
-							else if(roleslt.contains(UserRoleVo.STAFF))
-							{
-								 role=UserRoleVo.STAFF;
-								 eventBus.fireEvent(new LoginEvent(LoginEvent.LoginStatus.LOGIN_OK_STAFF));
-							}
-							else 
-								Window.alert("没有角色");
-						}
-					}
-				}
-					if(role!=null)
-					{
-						dispatchAsync.execute(new LastLoginRoleRequest(resp.getToken(),role),
-								new AsyncCallback<LastLoginRoleResponse>() {
-	
-									@Override
-									public void onFailure(Throwable e) {
-										tokenObtained(null);
-										eventBus.fireEvent(new PlatformInitEvent(false));
-									}
-	
-									@Override
-									public void onSuccess(LastLoginRoleResponse resp) {
-										//成功
-										if("success".equals(resp.getFal()))
-											GWT.log("success update last login role ");
-										
-									}
-								});
-					}
-				
+			 eventBus.fireEvent(new LoginEvent(LoginEvent.LoginStatus.LOGIN_OK));
 
 			}
 		});
