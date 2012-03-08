@@ -51,17 +51,7 @@ public class UserDao extends BaseDao<SysUser> {
 		return user;
 	}
 	
-	@SuppressWarnings("unchecked")
-	public List<SysUser> searchHrAdminUserByCriteria(UserSearchCriteria criteria) {
-		Query q = buildQueryToSearchHrAdminUserPaging(criteria, SEARCH);
-		if (null != criteria.getPaginationDetail()) {
-			if (criteria.getPaginationDetail().getLimit() != 0) {
-				q.setFirstResult(criteria.getPaginationDetail().getStart());
-				q.setMaxResults(criteria.getPaginationDetail().getLimit());
-			}
-		}
-		return q.getResultList();
-	}
+
 	
 	/**
 	 * Returns the count about HrAdmin user. The UserType must be {@code

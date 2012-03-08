@@ -5,7 +5,6 @@ import java.util.List;
 
 import com.chinarewards.elt.model.common.PaginationDetail;
 import com.chinarewards.elt.model.common.SortingDetail;
-import com.chinarewards.elt.model.reward.base.WinnerProcessFlag;
 
 public class WinnersRecordQueryVo {
 	private PaginationDetail paginationDetail;
@@ -32,8 +31,6 @@ public class WinnersRecordQueryVo {
 	// 此参数影响获奖次数，通过员工所获奖励的颁发部门进行过滤
 	private List<String> managedDeptIds;
 
-	// 奖励的状态，默认为 PROCESS_SUCCESS
-	private WinnerProcessFlag processFlag = WinnerProcessFlag.PROCESS_SUCCESS;
 
 	private boolean filterRewardsParticipants = true;
 	// 所有参与着得ID
@@ -129,26 +126,7 @@ public class WinnersRecordQueryVo {
 		this.managedDeptIds = managedDeptIds;
 	}
 
-	/**
-	 * 奖励的状态，默认为 PROCESS_SUCCESS
-	 * 
-	 * @return the processFlag
-	 * @see {@link WinnerProcessFlag}
-	 */
-	public WinnerProcessFlag getProcessFlag() {
-		return processFlag;
-	}
 
-	/**
-	 * 奖励的状态，默认为 PROCESS_SUCCESS
-	 * 
-	 * @param processFlag
-	 *            the processFlag to set
-	 * @see {@link WinnerProcessFlag}
-	 */
-	public void setProcessFlag(WinnerProcessFlag processFlag) {
-		this.processFlag = processFlag;
-	}
 
 	@Override
 	public String toString() {
@@ -156,7 +134,7 @@ public class WinnersRecordQueryVo {
 				+ ", sortingDetail=" + sortingDetail + ", key=" + key
 				+ ", subDeptIds=" + subDeptIds + ", includeSubDepts="
 				+ includeSubDepts + ", managedDeptIds=" + managedDeptIds
-				+ ", processFlag=" + processFlag
+				
 				+ ", filterRewardsParticipants=" + filterRewardsParticipants
 				+ ", orgIds=" + orgIds + "]";
 	}

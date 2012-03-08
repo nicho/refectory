@@ -10,8 +10,6 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 
-import com.chinarewards.elt.model.org.Gender;
-import com.chinarewards.elt.model.org.NoticeMode;
 import com.chinarewards.elt.model.staff.StaffStatus;
 
 /**
@@ -72,8 +70,6 @@ public class Staff extends Organization {
 	/**
 	 * notification mode
 	 */
-	@Enumerated(EnumType.STRING)
-	private NoticeMode noticeMode;
 
 	/**
 	 * Flag whether is deleted
@@ -118,8 +114,6 @@ public class Staff extends Organization {
 	/**
 	 * gender
 	 */
-	@Enumerated(EnumType.STRING)
-	private Gender gender;
 
 	/**
 	 * native place(籍贯)
@@ -239,13 +233,6 @@ public class Staff extends Organization {
 		this.email = email;
 	}
 
-	public NoticeMode getNoticeMode() {
-		return noticeMode;
-	}
-
-	public void setNoticeMode(NoticeMode noticeMode) {
-		this.noticeMode = noticeMode;
-	}
 
 	public Integer isDeleted() {
 		return deleted;
@@ -311,13 +298,7 @@ public class Staff extends Organization {
 		this.jobPosition = jobPosition;
 	}
 
-	public Gender getGender() {
-		return gender;
-	}
 
-	public void setGender(Gender gender) {
-		this.gender = gender;
-	}
 
 	public String getNativePlace() {
 		return nativePlace;
@@ -353,14 +334,6 @@ public class Staff extends Organization {
 
 	@Override
 	public String toString() {
-		return "Staff [department=" + department + ", corporation="
-				+ corporation + ", phone=" + phone + ", email=" + email
-				+ ", noticeMode=" + noticeMode + ", deleted=" + deleted
-				+ ", txAccountId=" + txAccountId + ", surname=" + surname
-				+ ", personalName=" + personalName + ", jobNo=" + jobNo
-				+ ", dob=" + dob + ", entryDate=" + entryDate
-				+ ", jobPosition=" + jobPosition + ", gender=" + gender
-				+ ", nativePlace=" + nativePlace + ", nation=" + nation
-				+ ", IDCardNo=" + IDCardNo + ", location=" + location + "]";
+		return "Staff";
 	}
 }

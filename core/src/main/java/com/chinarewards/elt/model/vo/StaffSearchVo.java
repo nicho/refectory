@@ -10,7 +10,6 @@ import org.slf4j.LoggerFactory;
 import com.chinarewards.elt.model.common.PaginationDetail;
 import com.chinarewards.elt.model.common.SortingDetail;
 import com.chinarewards.elt.model.staff.StaffStatus;
-import com.chinarewards.elt.model.user.DeleteMarkConstant;
 
 public class StaffSearchVo {
 
@@ -91,8 +90,7 @@ public class StaffSearchVo {
 	private String staffMobiletelephoneNumber;
 	// 员工卡号
 	private String staffCardNumber;
-	// 员工离职状态
-	private DeleteMarkConstant deleteMarkConstant;
+
 	// 企业ID
 	private String enterpriseId;
 	// 部门ID
@@ -136,7 +134,7 @@ public class StaffSearchVo {
 				+ ", staffName=" + staffName + ", staffMobiletelephoneNumber="
 				+ staffMobiletelephoneNumber + ", staffCardNumber="
 				+ staffCardNumber + ", deleteMarkConstant="
-				+ deleteMarkConstant + ", enterpriseId=" + enterpriseId
+				+ ", enterpriseId=" + enterpriseId
 				+ ", deptId=" + deptId + ", keywords=" + keywords
 				+ ", deptParam=" + deptParam + ", departmentname="
 				+ departmentname + "]";
@@ -202,13 +200,7 @@ public class StaffSearchVo {
 		this.staffCardNumber = staffCardNumber;
 	}
 
-	public DeleteMarkConstant getDeleteMarkConstant() {
-		return deleteMarkConstant;
-	}
 
-	public void setDeleteMarkConstant(DeleteMarkConstant deleteMarkConstant) {
-		this.deleteMarkConstant = deleteMarkConstant;
-	}
 
 	public PaginationDetail getPaginationDetail() {
 		return paginationDetail;
