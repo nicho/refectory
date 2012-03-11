@@ -15,7 +15,7 @@ import javax.persistence.OneToOne;
 import org.hibernate.annotations.GenericGenerator;
 
 import com.chinarewards.elt.domain.org.Corporation;
-import com.chinarewards.elt.model.user.UserRole;
+import com.chinarewards.elt.domain.org.Restaurant;
 import com.chinarewards.elt.model.user.UserStatus;
 
 @Entity
@@ -42,6 +42,8 @@ public class SysUser implements Serializable {
 	@OneToOne(fetch = FetchType.EAGER)
 	private Corporation corporation;
 
+	private Restaurant restaurant;
+	
 	private Date createdAt;
 
 	private Date lastModifiedAt;
@@ -52,14 +54,14 @@ public class SysUser implements Serializable {
 	@ManyToOne
 	private SysUser lastModifiedBy;
 	
-	@Enumerated(EnumType.STRING)
-	private UserRole lastLoginRole;
-	public UserRole getLastLoginRole() {
-		return lastLoginRole;
+
+
+	public Restaurant getRestaurant() {
+		return restaurant;
 	}
 
-	public void setLastLoginRole(UserRole lastLoginRole) {
-		this.lastLoginRole = lastLoginRole;
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
 	}
 
 	public String getId() {

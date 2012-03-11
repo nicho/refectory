@@ -12,7 +12,15 @@ public class Restaurant extends Organization {
 
 	private static final long serialVersionUID = -2314873131853974603L;
 
+	private Corporation corp;
 
+	public Corporation getCorp() {
+		return corp;
+	}
+
+	public void setCorp(Corporation corp) {
+		this.corp = corp;
+	}
 
 }
 
