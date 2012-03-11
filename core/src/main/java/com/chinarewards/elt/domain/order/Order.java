@@ -12,6 +12,7 @@ import javax.persistence.OneToOne;
 import org.hibernate.annotations.GenericGenerator;
 
 import com.chinarewards.elt.domain.org.Corporation;
+import com.chinarewards.elt.domain.org.Restaurant;
 import com.chinarewards.elt.domain.person.Person;
 
 @Entity
@@ -73,13 +74,28 @@ public class Order implements Serializable {
 	
 	private String city;
 
-	private String restaurant;
-
 
 	private int orderStatus;
 
+	/**
+	 * 公司
+	 */
 	@OneToOne(fetch = FetchType.EAGER)
 	private Corporation corporation;
+	/**
+	 * 餐厅
+	 */
+	@OneToOne(fetch = FetchType.EAGER)
+	private Restaurant restaurant;
+
+	
+	public Restaurant getRestaurant() {
+		return restaurant;
+	}
+
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
+	}
 
 	public String getId() {
 		return id;
@@ -185,13 +201,6 @@ public class Order implements Serializable {
 		this.city = city;
 	}
 
-	public String getRestaurant() {
-		return restaurant;
-	}
-
-	public void setRestaurant(String restaurant) {
-		this.restaurant = restaurant;
-	}
 
 	public int getOrderStatus() {
 		return orderStatus;

@@ -15,7 +15,6 @@ import javax.persistence.OneToOne;
 import org.hibernate.annotations.GenericGenerator;
 
 import com.chinarewards.elt.domain.org.Corporation;
-import com.chinarewards.elt.domain.org.Staff;
 import com.chinarewards.elt.model.user.UserRole;
 import com.chinarewards.elt.model.user.UserStatus;
 
@@ -39,8 +38,6 @@ public class SysUser implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private UserStatus status;
 
-	@OneToOne(fetch = FetchType.EAGER)
-	private Staff staff;
 
 	@OneToOne(fetch = FetchType.EAGER)
 	private Corporation corporation;
@@ -98,13 +95,6 @@ public class SysUser implements Serializable {
 		this.status = status;
 	}
 
-	public Staff getStaff() {
-		return staff;
-	}
-
-	public void setStaff(Staff staff) {
-		this.staff = staff;
-	}
 
 	public Corporation getCorporation() {
 		return corporation;

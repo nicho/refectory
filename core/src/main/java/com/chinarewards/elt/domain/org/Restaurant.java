@@ -5,14 +5,15 @@ import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
-
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorValue(value = "corporation")
-public class Corporation extends Organization {
+@DiscriminatorValue(value = "restaurant")
+public class Restaurant extends Organization {
 
 	private static final long serialVersionUID = -2314873131853974603L;
 
 
 
 }
+
+
