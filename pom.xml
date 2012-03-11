@@ -2,9 +2,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.chinarewards</groupId>
-	<artifactId>elt</artifactId>
+	<artifactId>refectory</artifactId>
 	<packaging>pom</packaging>
-	<name>ELT Root Project</name>
+	<name>refectory Root Project</name>
 	<version>1.0-SNAPSHOT</version>
 
 	<properties>
@@ -289,7 +289,7 @@
 			</plugin>
 		</plugins>
 	</reporting>
-	<description>ELT Root Project</description>
+	<description>refectory Root Project</description>
 	<url>http://project.dev.china-rewards.com/hr/</url>
 
 	<modules>

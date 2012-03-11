@@ -2,11 +2,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.chinarewards</groupId>
-		<artifactId>elt</artifactId>
+		<artifactId>refectory</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 	<groupId>com.chinarewards</groupId>
-	<artifactId>elt-ear</artifactId>
+	<artifactId>refectory-ear</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>ear</packaging>
 	<name>ELT Application EAR</name>
