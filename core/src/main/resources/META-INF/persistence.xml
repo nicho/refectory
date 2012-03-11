@@ -8,10 +8,21 @@
 
 		<!-- JPA entities must be registered here -->
 
-		<!-- user -->
 		<class>com.chinarewards.elt.domain.user.SysUser</class>
 		<class>com.chinarewards.elt.domain.user.SysRole</class>
 		<class>com.chinarewards.elt.domain.user.SysUserRole</class>
+		<class>com.chinarewards.elt.domain.dictionary.Dictionary</class>
+		<class>com.chinarewards.elt.domain.dishes.Dishes</class>
+		<class>com.chinarewards.elt.domain.dishes.DishesMenu</class>
+		<class>com.chinarewards.elt.domain.dishes.DishesType</class>
+		<class>com.chinarewards.elt.domain.dishes.Menu</class>
+		<class>com.chinarewards.elt.domain.order.Order</class>
+		<class>com.chinarewards.elt.domain.org.Corporation</class>
+		<class>com.chinarewards.elt.domain.org.Organization</class>
+		<class>com.chinarewards.elt.domain.org.Restaurant</class>
+		<class>com.chinarewards.elt.domain.person.Person</class>
+		<class>com.chinarewards.elt.domain.user.Permissions</class>
+		<class>com.chinarewards.elt.domain.user.RolePermissions</class>
 
 		
 		
