@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import javax.persistence.NoResultException;
 import javax.persistence.Query;
 
 import com.chinarewards.elt.common.BaseDao;
@@ -14,6 +15,15 @@ import com.chinarewards.elt.model.common.PageStore;
 import com.chinarewards.elt.model.order.OrderListCriteria;
 
 public class OrderDao extends BaseDao<Orders> {
+	public Orders findByOrdersId(String orderId) {
+		try {
+			return (Orders) getEm()
+					.createQuery("FROM Orders WHERE id = :orderId")
+					.setParameter("orderId", orderId).getSingleResult();
+		} catch (NoResultException e) {
+			return null;
+		}
+	}
 	public PageStore<Orders> queryOrderPageAction(OrderListCriteria criteria) {
 
 		PageStore<Orders> result = new PageStore<Orders>();

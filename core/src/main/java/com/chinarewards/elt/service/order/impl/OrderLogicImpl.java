@@ -10,6 +10,7 @@ import com.chinarewards.elt.domain.order.Orders;
 import com.chinarewards.elt.domain.user.SysUser;
 import com.chinarewards.elt.model.common.PageStore;
 import com.chinarewards.elt.model.order.OrderListCriteria;
+import com.chinarewards.elt.model.order.OrderStatus;
 import com.chinarewards.elt.model.user.UserContext;
 import com.chinarewards.elt.service.order.OrderLogic;
 import com.chinarewards.elt.util.DateUtil;
@@ -104,5 +105,20 @@ public class OrderLogicImpl implements OrderLogic{
 	public PageStore<Orders> getOrderList(UserContext context,
 			OrderListCriteria criteria) {
 		return orderDao.queryOrderPageAction(criteria);
+	}
+
+	@Override
+	public String processingOrdersResult(String orderId, OrderStatus status) {
+		Orders order=orderDao.findByOrdersId(orderId);
+		if(order!=null && status!=null)
+		{
+			order.setOrderStatus(status);
+			orderDao.update(order);
+			return "SUCCESS";
+		}
+		else
+		{
+			return "FAILURE";
+		}
 	}
 }

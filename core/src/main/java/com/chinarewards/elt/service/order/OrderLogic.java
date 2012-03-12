@@ -4,6 +4,7 @@ import com.chinarewards.elt.domain.order.Orders;
 import com.chinarewards.elt.domain.user.SysUser;
 import com.chinarewards.elt.model.common.PageStore;
 import com.chinarewards.elt.model.order.OrderListCriteria;
+import com.chinarewards.elt.model.order.OrderStatus;
 import com.chinarewards.elt.model.user.UserContext;
 
 public interface OrderLogic {
@@ -36,6 +37,13 @@ public interface OrderLogic {
 	 * @return
 	 */
 	public PageStore<Orders> getOrderList(UserContext context,OrderListCriteria criteria);
+	/**
+	 * 处理订单结果反馈
+	 * @param context
+	 * @param Orders
+	 * @return
+	 */
+	public String processingOrdersResult(String orderId,OrderStatus status);
 //
 //	/**
 //	 * 执行状态

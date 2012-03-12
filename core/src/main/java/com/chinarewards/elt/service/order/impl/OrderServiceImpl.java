@@ -47,5 +47,10 @@ public class OrderServiceImpl implements OrderService {
 		return orderLogic.getOrderList(context, criteria);
 	}
 
+	@Override
+	public String processingOrdersResult(String orderId, OrderStatus status) {
+		return orderLogic.processingOrdersResult(orderId, status);
+	}
+
 
 }
