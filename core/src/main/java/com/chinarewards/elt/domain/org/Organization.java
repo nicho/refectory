@@ -33,19 +33,10 @@ public class Organization implements Serializable {
 	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	private String id;
 
-	/**
-	 * The name of {@link Corporation} or {@link Department} or others who
-	 * extends {@link Organization}.
-	 */
+
 	private String name;
 
-	/**
-	 * The description.
-	 */
-	private String description;
 	
-	private String deleteMarkConstant;
-
 	private Date createdAt;
 
 	private Date lastModifiedAt;
@@ -72,13 +63,6 @@ public class Organization implements Serializable {
 		this.name = name;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
 
 	public Date getCreatedAt() {
 		return createdAt;
@@ -112,13 +96,6 @@ public class Organization implements Serializable {
 		this.lastModifiedBy = lastModifiedBy;
 	}
 
-	public String getDeleteMarkConstant() {
-		return deleteMarkConstant;
-	}
-
-	public void setDeleteMarkConstant(String deleteMarkConstant) {
-		this.deleteMarkConstant = deleteMarkConstant;
-	}
 	
 	
 }

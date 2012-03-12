@@ -6,7 +6,6 @@ package com.chinarewards.elt.domain.user;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -18,12 +17,6 @@ import org.hibernate.annotations.GenericGenerator;
 
 import com.chinarewards.elt.model.user.UserRole;
 
-/**
- * Stores the role of a user.
- * 
- * @author cyril
- * @since 0.2.0
- */
 @Entity
 public class SysRole implements Serializable {
 
@@ -38,8 +31,7 @@ public class SysRole implements Serializable {
 	private String id;
 
 	@Enumerated(EnumType.STRING)
-	@Column(name = "ROLENAME")
-	private UserRole name;
+	private UserRole roleName;
 
 	private Date createdAt;
 
@@ -50,6 +42,14 @@ public class SysRole implements Serializable {
 
 	@ManyToOne
 	private SysUser lastModifiedBy;
+
+	public UserRole getRoleName() {
+		return roleName;
+	}
+
+	public void setRoleName(UserRole roleName) {
+		this.roleName = roleName;
+	}
 
 	/**
 	 * @return the id
@@ -66,20 +66,7 @@ public class SysRole implements Serializable {
 		this.id = id;
 	}
 
-	/**
-	 * @return the roleName
-	 */
-	public UserRole getName() {
-		return name;
-	}
-
-	/**
-	 * @param roleName
-	 *            the roleName to set
-	 */
-	public void setName(UserRole name) {
-		this.name = name;
-	}
+	
 
 	public Date getCreatedAt() {
 		return createdAt;

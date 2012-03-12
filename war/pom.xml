@@ -2,11 +2,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.chinarewards</groupId>
-		<artifactId>elt</artifactId>
+		<artifactId>refectory</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 	<groupId>com.chinarewards</groupId>
-	<artifactId>elt-war</artifactId>
+	<artifactId>refectory-war</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<name>Web Interface</name>
@@ -74,12 +74,12 @@
 
 		<dependency>
 			<groupId>com.chinarewards</groupId>
-			<artifactId>elt-core</artifactId>
+			<artifactId>refectory-core</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.chinarewards</groupId>
-			<artifactId>elt-model</artifactId>
+			<artifactId>refectory-model</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
@@ -177,7 +177,7 @@
 		<url>http://www.china-rewards.com</url>
 	</organization>
 	<build>
-		<finalName>elt-war</finalName>
+		<finalName>refectory-war</finalName>
 		<sourceDirectory>src/main/java</sourceDirectory>
 		<resources>
 			<resource>
