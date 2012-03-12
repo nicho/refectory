@@ -1,6 +1,9 @@
 package com.chinarewards.elt.service.order.impl;
 
 import com.chinarewards.elt.domain.order.Orders;
+import com.chinarewards.elt.model.common.PageStore;
+import com.chinarewards.elt.model.order.OrderListCriteria;
+import com.chinarewards.elt.model.order.OrderStatus;
 import com.chinarewards.elt.model.user.UserContext;
 import com.chinarewards.elt.service.order.OrderLogic;
 import com.chinarewards.elt.service.order.OrderService;
@@ -34,6 +37,14 @@ public class OrderServiceImpl implements OrderService {
 	public String deleteOrder(UserContext context, String id) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public PageStore<Orders> getUnhandledOrderList(UserContext context) {
+		OrderListCriteria criteria=new OrderListCriteria();
+		criteria.setOrderStatus(OrderStatus.UNHANDLED);
+		
+		return orderLogic.getOrderList(context, criteria);
 	}
 
 

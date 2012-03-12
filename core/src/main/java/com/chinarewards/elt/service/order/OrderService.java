@@ -1,6 +1,7 @@
 package com.chinarewards.elt.service.order;
 
 import com.chinarewards.elt.domain.order.Orders;
+import com.chinarewards.elt.model.common.PageStore;
 import com.chinarewards.elt.model.user.UserContext;
 
 /**
@@ -55,4 +56,12 @@ public interface OrderService {
 //	 * 查找定单根据状态
 //	 */
 //	public int  getOrderByStatus(UserContext context,OrderStatus status);
+	
+	/**
+	 * 未处理订单查询
+	 * @param context
+	 * @param Orders
+	 * @return
+	 */
+	public PageStore<Orders> getUnhandledOrderList(UserContext context);
 }

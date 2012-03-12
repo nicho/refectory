@@ -14,6 +14,7 @@ import org.hibernate.annotations.GenericGenerator;
 import com.chinarewards.elt.domain.org.Corporation;
 import com.chinarewards.elt.domain.org.Restaurant;
 import com.chinarewards.elt.domain.person.Person;
+import com.chinarewards.elt.model.order.OrderStatus;
 
 @Entity
 public class Orders implements Serializable {
@@ -26,7 +27,7 @@ public class Orders implements Serializable {
 	@Id
 	@GeneratedValue(generator = "system-uuid")
 	@GenericGenerator(name = "system-uuid", strategy = "uuid")
-	private String id;	
+	private String id;
 	/**
 	 * 编号
 	 */
@@ -50,7 +51,7 @@ public class Orders implements Serializable {
 	/**
 	 * 处理时间
 	 */
-	private Date  handleTime;
+	private Date handleTime;
 	/**
 	 * 修改时间
 	 */
@@ -71,11 +72,13 @@ public class Orders implements Serializable {
 	 * 就餐人
 	 */
 	private Person contactPerson;
-	
+
 	private String city;
 
-
-	private int orderStatus;
+	/**
+	 * 订单状态
+	 */
+	private OrderStatus orderStatus;
 
 	/**
 	 * 公司
@@ -89,7 +92,6 @@ public class Orders implements Serializable {
 	private Restaurant restaurant;
 
 	private boolean deleted;
-
 
 	public boolean isDeleted() {
 		return deleted;
@@ -211,12 +213,11 @@ public class Orders implements Serializable {
 		this.city = city;
 	}
 
-
-	public int getOrderStatus() {
+	public OrderStatus getOrderStatus() {
 		return orderStatus;
 	}
 
-	public void setOrderStatus(int orderStatus) {
+	public void setOrderStatus(OrderStatus orderStatus) {
 		this.orderStatus = orderStatus;
 	}
 
@@ -227,9 +228,5 @@ public class Orders implements Serializable {
 	public void setCorporation(Corporation corporation) {
 		this.corporation = corporation;
 	}
-
-
-	
-
 
 }

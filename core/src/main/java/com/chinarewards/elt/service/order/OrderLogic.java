@@ -2,6 +2,9 @@ package com.chinarewards.elt.service.order;
 
 import com.chinarewards.elt.domain.order.Orders;
 import com.chinarewards.elt.domain.user.SysUser;
+import com.chinarewards.elt.model.common.PageStore;
+import com.chinarewards.elt.model.order.OrderListCriteria;
+import com.chinarewards.elt.model.user.UserContext;
 
 public interface OrderLogic {
 	/**
@@ -26,13 +29,13 @@ public interface OrderLogic {
 	 * @return
 	 */
 	public String deleteOrder(SysUser caller,String id);
-//	/**
-//	 * 订单列表
-//	 * @param context
-//	 * @param Orders
-//	 * @return
-//	 */
-//	public PageStore<OrderListVo> OrderList(SysUser caller,OrderListVo OrderVo);
+	/**
+	 * 订单列表
+	 * @param context
+	 * @param Orders
+	 * @return
+	 */
+	public PageStore<Orders> getOrderList(UserContext context,OrderListCriteria criteria);
 //
 //	/**
 //	 * 执行状态
