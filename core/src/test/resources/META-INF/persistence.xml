@@ -14,7 +14,7 @@
 		<class>com.chinarewards.elt.domain.dishes.DishesMenu</class>
 		<class>com.chinarewards.elt.domain.dishes.DishesType</class>
 		<class>com.chinarewards.elt.domain.dishes.Menu</class>
-		<class>com.chinarewards.elt.domain.order.Order</class>
+		<class>com.chinarewards.elt.domain.order.Orders</class>
 		<class>com.chinarewards.elt.domain.org.Corporation</class>
 		<class>com.chinarewards.elt.domain.org.Organization</class>
 		<class>com.chinarewards.elt.domain.org.Restaurant</class>

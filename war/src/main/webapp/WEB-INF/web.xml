@@ -2,11 +2,6 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 	<display-name>GWT-MVP Demo</display-name>
-	<listener>   
-     <listener-class>   
-         com.chinarewards.elt.common.HSQLDBServletContextListener    
-     </listener-class>   
-  </listener>
 	<listener>
 		<listener-class>com.chinarewards.gwt.elt.server.EltServletConfig</listener-class>
 	</listener>
