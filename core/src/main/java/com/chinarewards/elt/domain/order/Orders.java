@@ -16,7 +16,7 @@ import com.chinarewards.elt.domain.org.Restaurant;
 import com.chinarewards.elt.domain.person.Person;
 
 @Entity
-public class Order implements Serializable {
+public class Orders implements Serializable {
 
 	/**
 	 * 
@@ -88,7 +88,17 @@ public class Order implements Serializable {
 	@OneToOne(fetch = FetchType.EAGER)
 	private Restaurant restaurant;
 
-	
+	private boolean deleted;
+
+
+	public boolean isDeleted() {
+		return deleted;
+	}
+
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
+	}
+
 	public Restaurant getRestaurant() {
 		return restaurant;
 	}
