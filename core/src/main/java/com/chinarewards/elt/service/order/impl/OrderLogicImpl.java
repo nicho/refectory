@@ -63,43 +63,6 @@ public class OrderLogicImpl implements OrderLogic{
 		order= orderDao.update(order);
 		return order.getId();
 	}
-//
-//	@Override
-//	public PageStore<OrderListVo> OrderList(SysUser caller, OrderListVo orderVo) {
-//		
-//		PageStore<Orders> pageStore = new PageStore<Orders>();
-//		
-//		pageStore.setResultCount(orderDao.countOrder(orderVo));
-////		List<Orders> OrderList = orderDao.OrderList(orderVo);
-////		List<OrderListVo> OrderVoList = new ArrayList<OrderListVo>();
-////		for (Orders order : OrderList) {
-////			OrderVoList.add(convertFromOrderToVo(order));
-////		}
-//		PageStore<OrderListVo> storeVo = new PageStore<OrderListVo>();
-//		storeVo.setResultCount(pageStore.getResultCount());
-////		storeVo.setResultList(OrderVoList);
-//
-//		return storeVo;
-//	}
-//	
-//	@Override
-//	public String updateStatus(SysUser caller,String id,OrderStatus status) {
-////		Date currTime = DateUtil.getTime();
-////		Orders order = orderDao.findById(Orders.class, id);
-////		order.setStatus(status);
-////		order.setRecorddate(currTime);
-////		order.setRecorduser(caller.getUserName());
-////		if(status.equals(OrderStatus.ERRORORDER))
-////			order.setRemarks(order.getRemarks()+"（退回备注：被"+caller.getUserName()+"在"+DateUtil.formatData("", currTime)+"退回）");
-////		
-////		order= orderDao.update(order);
-//		return null;
-//	}
-//
-//	@Override
-//	public int getOrderByStatus(OrderListVo orderVo){
-//		return orderDao.countOrder( orderVo);
-//	}
 
 	@Override
 	public PageStore<Orders> getOrderList(UserContext context,

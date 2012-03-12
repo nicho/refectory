@@ -44,16 +44,7 @@ public interface OrderLogic {
 	 * @return
 	 */
 	public String processingOrdersResult(String orderId,OrderStatus status);
-//
-//	/**
-//	 * 执行状态
-//	 * @param id
-//	 * @return
-//	 */
-//	public String updateStatus(SysUser caller,String id,OrderStatus status);
-//	
-//	
-//	public int getOrderByStatus(OrderListVo orderVo);
+
 }
 
 
