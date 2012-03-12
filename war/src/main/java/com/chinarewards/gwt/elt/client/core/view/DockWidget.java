@@ -4,7 +4,6 @@ import java.util.Date;
 
 import com.chinarewards.gwt.elt.client.core.presenter.DockPresenter.DockDisplay;
 import com.chinarewards.gwt.elt.client.core.view.constant.ViewConstants;
-import com.chinarewards.gwt.elt.client.view.constant.CssStyleConstants;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -35,20 +34,13 @@ public class DockWidget extends Composite implements DockDisplay {
 	InlineLabel message;
 
 	@UiField
-	Anchor btnEmail;
+	Anchor btnUser;
 
 	@UiField
-	Anchor btnGb;
+	Anchor btnOrder;
 	@UiField
-	Anchor btnRewardItem;
-	@UiField
-	Anchor btnReward;
-	@UiField
-	Anchor btnStaff;
-	@UiField
-	Anchor btnSetting;
-	@UiField
-	Anchor btnGift;
+	Anchor btnDishesMenu;
+
 	@UiField
 	Anchor collectionBtn;
 
@@ -61,8 +53,6 @@ public class DockWidget extends Composite implements DockDisplay {
 	Anchor giftExchange;
 	@UiField
 	Anchor staffCorner;
-	@UiField
-	Anchor btnIntegral;
 
 	// Set the format of datepicker.
 	DateTimeFormat dateFormat = DateTimeFormat
@@ -93,118 +83,38 @@ public class DockWidget extends Composite implements DockDisplay {
 	String styleNo = "";
 
 	private void init() {
-		styleOn = btnRewardItem.getStyleName();
-		styleNo = btnEmail.getStyleName();
-		btnReward.addClickHandler(new ClickHandler() {
+		styleOn = btnOrder.getStyleName();
+		styleNo = btnUser.getStyleName();
+
+		btnUser.addClickHandler(new ClickHandler() {
 
 			@Override
 			public void onClick(ClickEvent event) {
-				btnReward.setStyleName(styleOn);
-				btnEmail.setStyleName(styleNo);
-				btnGb.setStyleName(styleNo);
-				btnRewardItem.setStyleName(styleNo);
-				btnStaff.setStyleName(styleNo);
-				btnSetting.setStyleName(styleNo);
-				btnGift.setStyleName(styleNo);
-				btnIntegral.setStyleName(styleNo);
+				btnUser.setStyleName(styleOn);
+				btnOrder.setStyleName(styleNo);
+				btnDishesMenu.setStyleName(styleNo);
+
 			}
 		});
-		btnEmail.addClickHandler(new ClickHandler() {
+		btnOrder.addClickHandler(new ClickHandler() {
 
 			@Override
 			public void onClick(ClickEvent event) {
-				btnReward.setStyleName(styleNo);
-				btnEmail.setStyleName(styleOn);
-				btnGb.setStyleName(styleNo);
-				btnRewardItem.setStyleName(styleNo);
-				btnStaff.setStyleName(styleNo);
-				btnSetting.setStyleName(styleNo);
-				btnGift.setStyleName(styleNo);
-				btnIntegral.setStyleName(styleNo);
+
+				btnUser.setStyleName(styleNo);
+				btnOrder.setStyleName(styleOn);
+				btnDishesMenu.setStyleName(styleNo);
 			}
 		});
-		btnGb.addClickHandler(new ClickHandler() {
+		btnDishesMenu.addClickHandler(new ClickHandler() {
 
 			@Override
 			public void onClick(ClickEvent event) {
-				btnReward.setStyleName(styleNo);
-				btnEmail.setStyleName(styleNo);
-				btnGb.setStyleName(styleOn);
-				btnRewardItem.setStyleName(styleNo);
-				btnStaff.setStyleName(styleNo);
-				btnSetting.setStyleName(styleNo);
-				btnGift.setStyleName(styleNo);
-				btnIntegral.setStyleName(styleNo);
-			}
-		});
-		btnRewardItem.addClickHandler(new ClickHandler() {
 
-			@Override
-			public void onClick(ClickEvent event) {
-				btnReward.setStyleName(styleNo);
-				btnEmail.setStyleName(styleNo);
-				btnGb.setStyleName(styleNo);
-				btnRewardItem.setStyleName(styleOn);
-				btnStaff.setStyleName(styleNo);
-				btnSetting.setStyleName(styleNo);
-				btnGift.setStyleName(styleNo);
-				btnIntegral.setStyleName(styleNo);
-			}
-		});
-		btnStaff.addClickHandler(new ClickHandler() {
+				btnUser.setStyleName(styleNo);
+				btnOrder.setStyleName(styleNo);
+				btnDishesMenu.setStyleName(styleOn);
 
-			@Override
-			public void onClick(ClickEvent event) {
-				btnReward.setStyleName(styleNo);
-				btnEmail.setStyleName(styleNo);
-				btnGb.setStyleName(styleNo);
-				btnRewardItem.setStyleName(styleNo);
-				btnStaff.setStyleName(styleOn);
-				btnSetting.setStyleName(styleNo);
-				btnGift.setStyleName(styleNo);
-				btnIntegral.setStyleName(styleNo);
-			}
-		});
-		btnSetting.addClickHandler(new ClickHandler() {
-
-			@Override
-			public void onClick(ClickEvent event) {
-				btnReward.setStyleName(styleNo);
-				btnEmail.setStyleName(styleNo);
-				btnGb.setStyleName(styleNo);
-				btnRewardItem.setStyleName(styleNo);
-				btnStaff.setStyleName(styleNo);
-				btnGift.setStyleName(styleNo);
-				btnSetting.setStyleName(styleOn);
-				btnIntegral.setStyleName(styleNo);
-			}
-		});
-		btnGift.addClickHandler(new ClickHandler() {
-
-			@Override
-			public void onClick(ClickEvent event) {
-				btnReward.setStyleName(styleNo);
-				btnEmail.setStyleName(styleNo);
-				btnGb.setStyleName(styleNo);
-				btnRewardItem.setStyleName(styleNo);
-				btnStaff.setStyleName(styleNo);
-				btnSetting.setStyleName(styleNo);
-				btnGift.setStyleName(styleOn);
-				btnIntegral.setStyleName(styleNo);
-			}
-		});
-		btnIntegral.addClickHandler(new ClickHandler() {
-
-			@Override
-			public void onClick(ClickEvent event) {
-				btnIntegral.setStyleName(styleOn);
-				btnReward.setStyleName(styleNo);
-				btnEmail.setStyleName(styleNo);
-				btnGb.setStyleName(styleNo);
-				btnRewardItem.setStyleName(styleNo);
-				btnStaff.setStyleName(styleNo);
-				btnSetting.setStyleName(styleNo);
-				btnGift.setStyleName(styleNo);
 			}
 		});
 
@@ -228,8 +138,8 @@ public class DockWidget extends Composite implements DockDisplay {
 	}
 
 	@Override
-	public HasClickHandlers getBtnEmail() {
-		return btnEmail;
+	public HasClickHandlers getbtnUser() {
+		return btnUser;
 	}
 
 	@Override
@@ -239,8 +149,8 @@ public class DockWidget extends Composite implements DockDisplay {
 	}
 
 	@Override
-	public HasClickHandlers getBtnGb() {
-		return btnGb;
+	public HasClickHandlers getbtnOrder() {
+		return btnOrder;
 	}
 
 	@Override
@@ -249,49 +159,8 @@ public class DockWidget extends Composite implements DockDisplay {
 	}
 
 	@Override
-	public HasClickHandlers getBtnReward() {
-		return btnReward;
-	}
-
-	@Override
-	public HasClickHandlers getBtnRewardItem() {
-		return btnRewardItem;
-	}
-
-	@Override
-	public HasClickHandlers getBtnStaff() {
-		return btnStaff;
-	}
-
-	@Override
-	public HasClickHandlers getBtnSetting() {
-		return btnSetting;
-	}
-
-	@Override
-	public HasClickHandlers getBtnGift() {
-		return btnGift;
-	}
-
-	@Override
-	public HasClickHandlers getBtnCollection() {
-		return collectionBtn;
-	}
-
-	@Override
-	public HasClickHandlers getManagementCenter() {
-
-		return managementCenter;
-	}
-
-	@Override
-	public HasClickHandlers getGiftExchange() {
-		return giftExchange;
-	}
-
-	@Override
-	public HasClickHandlers getStaffCorner() {
-		return staffCorner;
+	public HasClickHandlers getbtnDishesMenu() {
+		return btnDishesMenu;
 	}
 
 	@Override
@@ -313,103 +182,28 @@ public class DockWidget extends Composite implements DockDisplay {
 	}
 
 	@Override
-	public HasClickHandlers getBtnIntegral() {
-		return btnIntegral;
-	}
-
-	@Override
 	public void changeTopMenu(String key) {
-		if ("Reward".equals(key)) {
-			btnReward.setStyleName(styleOn);
-			btnEmail.setStyleName(styleNo);
-			btnGb.setStyleName(styleNo);
-			btnRewardItem.setStyleName(styleNo);
-			btnStaff.setStyleName(styleNo);
-			btnSetting.setStyleName(styleNo);
-			btnGift.setStyleName(styleNo);
-			btnIntegral.setStyleName(styleNo);
+
+		if ("User".equals(key)) {
+
+			btnUser.setStyleName(styleOn);
+			btnOrder.setStyleName(styleNo);
+			btnDishesMenu.setStyleName(styleNo);
+
 		}
-		if ("Email".equals(key)) {
-			btnReward.setStyleName(styleNo);
-			btnEmail.setStyleName(styleOn);
-			btnGb.setStyleName(styleNo);
-			btnRewardItem.setStyleName(styleNo);
-			btnStaff.setStyleName(styleNo);
-			btnSetting.setStyleName(styleNo);
-			btnGift.setStyleName(styleNo);
-			btnIntegral.setStyleName(styleNo);
+		if ("Order".equals(key)) {
+
+			btnUser.setStyleName(styleNo);
+			btnOrder.setStyleName(styleOn);
+			btnDishesMenu.setStyleName(styleNo);
+
 		}
-		if ("Gb".equals(key)) {
-			btnReward.setStyleName(styleNo);
-			btnEmail.setStyleName(styleNo);
-			btnGb.setStyleName(styleOn);
-			btnRewardItem.setStyleName(styleNo);
-			btnStaff.setStyleName(styleNo);
-			btnSetting.setStyleName(styleNo);
-			btnGift.setStyleName(styleNo);
-			btnIntegral.setStyleName(styleNo);
-		}
-		if ("RewardItem".equals(key)) {
-			btnReward.setStyleName(styleNo);
-			btnEmail.setStyleName(styleNo);
-			btnGb.setStyleName(styleNo);
-			btnRewardItem.setStyleName(styleOn);
-			btnStaff.setStyleName(styleNo);
-			btnSetting.setStyleName(styleNo);
-			btnGift.setStyleName(styleNo);
-			btnIntegral.setStyleName(styleNo);
-		}
-		if ("Staff".equals(key)) {
-			btnReward.setStyleName(styleNo);
-			btnEmail.setStyleName(styleNo);
-			btnGb.setStyleName(styleNo);
-			btnRewardItem.setStyleName(styleNo);
-			btnStaff.setStyleName(styleOn);
-			btnSetting.setStyleName(styleNo);
-			btnGift.setStyleName(styleNo);
-			btnIntegral.setStyleName(styleNo);
-		}
-		if ("Setting".equals(key)) {
-			btnReward.setStyleName(styleNo);
-			btnEmail.setStyleName(styleNo);
-			btnGb.setStyleName(styleNo);
-			btnRewardItem.setStyleName(styleNo);
-			btnStaff.setStyleName(styleNo);
-			btnGift.setStyleName(styleNo);
-			btnSetting.setStyleName(styleOn);
-			btnIntegral.setStyleName(styleNo);
-		}
-		if ("Gift".equals(key)) {
-			btnReward.setStyleName(styleNo);
-			btnEmail.setStyleName(styleNo);
-			btnGb.setStyleName(styleNo);
-			btnRewardItem.setStyleName(styleNo);
-			btnStaff.setStyleName(styleNo);
-			btnSetting.setStyleName(styleNo);
-			btnGift.setStyleName(styleOn);
-			btnIntegral.setStyleName(styleNo);
-		}
-		if ("Integral".equals(key)) {
-			btnIntegral.setStyleName(styleOn);
-			btnReward.setStyleName(styleNo);
-			btnEmail.setStyleName(styleNo);
-			btnGb.setStyleName(styleNo);
-			btnRewardItem.setStyleName(styleNo);
-			btnStaff.setStyleName(styleNo);
-			btnSetting.setStyleName(styleNo);
-			btnGift.setStyleName(styleNo);
+		if ("Dishes".equals(key)) {
+			btnUser.setStyleName(styleNo);
+			btnOrder.setStyleName(styleNo);
+			btnDishesMenu.setStyleName(styleOn);
 		}
 
-	}
-
-	@Override
-	public void displayDeptMgrMenu() {
-		btnGb.setVisible(false);
-		btnGb.getElement().getParentElement().addClassName(CssStyleConstants.hidden);
-		btnGift.setVisible(false);
-		btnGift.getElement().getParentElement().addClassName(CssStyleConstants.hidden);
-
-		
 	}
 
 }

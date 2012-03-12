@@ -42,14 +42,10 @@
     <g:Image resource="{logo_new}" styleName="{new2.logo}" width="255px" height="75px"/>
     <div class="{new2.nav} {new2.clearfix}">
       <ul>
-        <li><g:Anchor styleName="{new2.menu}" ui:field="btnEmail"><span>收件箱</span></g:Anchor></li>
-        <li><g:Anchor styleName="{new2.menu}" ui:field="btnGb"><span>广 播</span></g:Anchor></li>
-        <li><g:Anchor styleName="{new2.menu} {new2.menu-on}" ui:field="btnRewardItem"> <span>奖 项</span></g:Anchor></li>
-        <li><g:Anchor styleName="{new2.menu}" ui:field="btnReward"> <span>应用奖项</span></g:Anchor></li>
-        <li><g:Anchor styleName="{new2.menu}" ui:field="btnGift"><span>兑换管理</span></g:Anchor></li>
-        <li><g:Anchor styleName="{new2.menu}" ui:field="btnStaff"><span>员工数据</span></g:Anchor></li>
-        <li><g:Anchor styleName="{new2.menu}" ui:field="btnIntegral" ><span>积分管理</span></g:Anchor></li>
-        <li><g:Anchor styleName="{new2.menu}" ui:field="btnSetting"><span>设 置</span></g:Anchor></li>
+        <li><g:Anchor styleName="{new2.menu}" ui:field="btnUser"><span>用户管理</span></g:Anchor></li>
+        <li><g:Anchor styleName="{new2.menu} {new2.menu-on}" ui:field="btnOrder"><span>订单处理</span></g:Anchor></li>
+        <li><g:Anchor styleName="{new2.menu}" ui:field="btnDishesMenu"> <span>菜单管理</span></g:Anchor></li>
+
 
       </ul>
     </div>
@@ -63,8 +59,8 @@
 				    <div class="{new2.footer-line}"></div>
 					    <div class="{new2.footer-wrap}">
 						      <div class="{new2.copyright}">
-						        <p>版权所有 深圳积享通信息技术有限公司  粤ICP备09007295</p>
-						        <p>电话：0755-82671268   传真：0755-86271610</p>
+						        <p>版权所有 xxxxxxxxxxx  粤ICP备0000000000</p>
+						        <p>电话：0000-0000000   传真：0000-00000000</p>
 						      </div>
 					    </div>
 				  </div>
@@ -85,7 +81,7 @@
 											<g:Image resource="{title01}"></g:Image>
 										</td>  -->
 										<td>
-											<g:InlineLabel text="奖项" ui:field="menuTitle" />
+											<g:InlineLabel text="菜单" ui:field="menuTitle" />
 										</td>
 										<!--<td id="title03"></td>  -->
 									</tr>

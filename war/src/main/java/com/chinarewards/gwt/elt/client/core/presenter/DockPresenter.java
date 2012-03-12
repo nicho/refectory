@@ -10,19 +10,13 @@ public interface DockPresenter extends Presenter<DockPresenter.DockDisplay> {
 
 	public static interface DockDisplay extends Display {
 		
+		HasClickHandlers getbtnUser();
+		HasClickHandlers getbtnOrder();
+		HasClickHandlers getbtnDishesMenu();
+		
 		HasClickHandlers getlogBtn();
-		HasClickHandlers getBtnEmail();
-		HasClickHandlers getBtnGb();
-		HasClickHandlers getBtnReward();
-		HasClickHandlers getBtnRewardItem();
-		HasClickHandlers getBtnStaff();
-		HasClickHandlers getBtnSetting();
-		HasClickHandlers getBtnGift();
-		HasClickHandlers getBtnCollection();
-		HasClickHandlers getBtnIntegral();
-		HasClickHandlers getManagementCenter();
-		HasClickHandlers getGiftExchange();
-		HasClickHandlers getStaffCorner();
+
+
 		DockLayoutPanel getDock();
 		
 		Panel getMenu();
@@ -36,7 +30,7 @@ public interface DockPresenter extends Presenter<DockPresenter.DockDisplay> {
 		void disableStaffCorner();
 		
 		void changeTopMenu(String key);
-		void displayDeptMgrMenu();
+
 	}
 	
 	

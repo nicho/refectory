@@ -45,14 +45,32 @@ public class DockPresenterImpl extends BasePresenter<DockDisplay> implements
 				eventBus.fireEvent(new LoginEvent(LoginEvent.LoginStatus.LOGOUT));
 			}
 		}));
-		registerHandler(display.getBtnCollection().addClickHandler(
+		registerHandler(display.getbtnUser().addClickHandler(
+				new ClickHandler() {
+					@Override
+					public void onClick(ClickEvent event) {
+//						display.setMenuTitle("用户管理");
+//						menuProcessor.initrender(display.getMenu(),
+//								"User");
+//						eventBus.fireEvent(new MenuClickEvent(
+//								menuProcessor
+//										.getMenuItem(BroadcastingListConstants.MENU_BROADCASTINGLIST_SEARCH)));
+					}
+				}));
+		registerHandler(display.getbtnOrder().addClickHandler(
 				new ClickHandler() {
 					@Override
 					public void onClick(ClickEvent event) {
 						Window.alert("收藏");
 					}
 				}));
-	
+		registerHandler(display.getbtnDishesMenu().addClickHandler(
+				new ClickHandler() {
+					@Override
+					public void onClick(ClickEvent event) {
+						Window.alert("收藏");
+					}
+				}));
 
 	}
 
