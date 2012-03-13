@@ -241,7 +241,7 @@ public class CookieSessionManager implements SessionManager {
 					});
 
 		} else {
-			eventBus.fireEvent(new PlatformInitEvent(false));
+			eventBus.fireEvent(new PlatformInitEvent(true));
 		}
 
 	}
