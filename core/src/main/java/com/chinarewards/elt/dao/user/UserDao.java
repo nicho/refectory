@@ -1,14 +1,17 @@
 package com.chinarewards.elt.dao.user;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import javax.persistence.Query;
 
 import com.chinarewards.elt.common.BaseDao;
 import com.chinarewards.elt.domain.user.SysUser;
+import com.chinarewards.elt.model.common.PageStore;
 import com.chinarewards.elt.model.user.UserSearchCriteria;
 import com.chinarewards.elt.model.user.UserStatus;
 import com.chinarewards.elt.util.StringUtil;
@@ -122,4 +125,77 @@ public class UserDao extends BaseDao<SysUser> {
 
 		return q;
 	}
+	
+	
+	public PageStore<SysUser> queryUserPageAction(UserSearchCriteria criteria) {
+
+		PageStore<SysUser> result = new PageStore<SysUser>();
+
+		result.setResultList(this.userList(criteria));
+		result.setResultCount(this.countuser(criteria));
+
+		return result;
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<SysUser> userList(UserSearchCriteria criteria) {
+		List<SysUser> result = new ArrayList<SysUser>();
+
+		Query query = getFetchUserQuery(SEARCH, criteria);
+
+		result = query.getResultList();
+
+		return result;
+	}
+
+	public int countuser(UserSearchCriteria criteria) {
+
+		int count = 0;
+		Query query = getFetchUserQuery(COUNT, criteria);
+		if (query.getSingleResult() != null)
+			count = Integer.parseInt(query.getSingleResult().toString());
+		logger.debug(" finshed by user method, result count : {}", count);
+		return count;
+	}
+
+	private Query getFetchUserQuery(String type, UserSearchCriteria vo) {
+		Map<String, Object> param = new HashMap<String, Object>();
+		StringBuffer eql = new StringBuffer();
+
+		if (SEARCH.equals(type)) {
+			eql.append(" SELECT o FROM users o  where  1=1 ");
+		
+		} else if (COUNT.equals(type)) {
+			eql.append(" SELECT COUNT(o) FROM users o where  1=1 ");
+
+		}
+
+		if (SEARCH.equals(type)) {
+			if (vo.getSortingDetail() != null) {
+				eql.append(" user BY o." + vo.getSortingDetail().getSort()
+						+ " " + vo.getSortingDetail().getDirection());
+			}
+		}
+		System.out.println("EQL : " + eql);
+		Query query = getEm().createQuery(eql.toString());
+		if (SEARCH.equals(type)) {
+			if (vo.getPaginationDetail() != null
+					&& vo.getPaginationDetail().getLimit() != 0) {
+				int start = vo.getPaginationDetail().getStart();
+				int limit = vo.getPaginationDetail().getLimit();
+
+				query.setFirstResult(start);
+				query.setMaxResults(limit);
+			}
+		}
+		if (param.size() > 0) {
+			Set<String> key = param.keySet();
+			for (String s : key) {
+				query.setParameter(s, param.get(s));
+			}
+		}
+
+		return query;
+	}
+
 }

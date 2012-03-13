@@ -126,45 +126,21 @@ public class UserListPresenterImpl extends
 		};
 
 
-		cellTable.addColumn("员工编号", new TextCell(),
-				new GetValue<UserListClient, String>() {
-					@Override
-					public String getValue(UserListClient staff) {
-						return staff.getStaffNo();
-					}
-				}, ref, "jobNo");
-		cellTable.addColumn("姓名", new TextCell(),
+		cellTable.addColumn("用户名", new TextCell(),
 				new GetValue<UserListClient, String>() {
 					@Override
 					public String getValue(UserListClient staff) {
 						return staff.getStaffName();
 					}
-				}, ref, "name");
-		cellTable.addColumn("所属部门", new TextCell(),
+				}, ref, "userName");
+		cellTable.addColumn("角色", new TextCell(),
 				new GetValue<UserListClient, String>() {
 					@Override
 					public String getValue(UserListClient staff) {
-						if(staff.getDepartmentName().indexOf("ROOT")==-1)
-						return staff.getDepartmentName();
-						else
-						return "";
+						return staff.getStaffName();
 					}
-				});
-		cellTable.addColumn("职位", new TextCell(),
-				new GetValue<UserListClient, String>() {
-					@Override
-					public String getValue(UserListClient staff) {
-						return staff.getJobPosition();
-					}
-				}, ref, "jobPosition");
-		cellTable.addColumn("电话", new TextCell(),
-				new GetValue<UserListClient, String>() {
-					@Override
-					public String getValue(UserListClient staff) {
-						return staff.getPhone();
-					}
-				}, ref, "phone");
-
+				}, ref, "role");
+	
 		
 	}
 	

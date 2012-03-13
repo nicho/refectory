@@ -4,6 +4,8 @@ import net.customware.gwt.dispatch.server.guice.ActionHandlerModule;
 
 import com.chinarewards.gwt.elt.client.login.LoginRequest;
 import com.chinarewards.gwt.elt.client.login.TokenValidRequest;
+import com.chinarewards.gwt.elt.client.server.user.SearchUserListActionHandler;
+import com.chinarewards.gwt.elt.client.userList.request.SearchUserListRequest;
 import com.chinarewards.gwt.elt.server.login.LoginActionHandler;
 import com.chinarewards.gwt.elt.server.login.TokenValidActionHandler;
 
@@ -21,6 +23,7 @@ public class ActionModule extends ActionHandlerModule {
 
 		// 登录验证token
 		bindHandler(TokenValidRequest.class, TokenValidActionHandler.class);
+		bindHandler(SearchUserListRequest.class, SearchUserListActionHandler.class);
 
 
 

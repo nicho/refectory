@@ -35,7 +35,7 @@
 			<p class="{new2.send-news}">
 					<div style="float:right;text-align:right;padding-bottom: 5px;">
 						<span class="{new2.btn}">
-								<g:Button ui:field="addStaffBtn">添加新员工</g:Button>
+								<g:Button ui:field="addStaffBtn">添加新用户</g:Button>
 						</span>
 						<span class="{new2.btn}">
 								<g:Button ui:field="createSysUserBtn">批量生成帐号</g:Button>
@@ -48,7 +48,7 @@
 						</span>
 					</div>
 			</p>
-			<div class="{new2.divtext}">共有 <g:InlineLabel ui:field="dataCount" styleName="{new2.divfont}"></g:InlineLabel> 位在职员工</div><div  class="{new2.divend}"></div>
+			<div class="{new2.divtext}">共有 <g:InlineLabel ui:field="dataCount" styleName="{new2.divfont}"></g:InlineLabel> 位用户</div><div  class="{new2.divend}"></div>
 			<div class="{new2.table}">
 				<g:FlowPanel ui:field="resultPanel" />
 			</div>
