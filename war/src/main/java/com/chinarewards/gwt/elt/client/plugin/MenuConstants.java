@@ -15,7 +15,11 @@ public abstract class MenuConstants {
 	public static final int MENU_ORDER_REWARDS_ENTRY = order++;
 
 	public static final int MENU_ORDER_USERLIST_EDIT = order++;
-
-
-
+	public static final int MENU_ORDER_DICTIONARYLIST_EDIT = order++;
+	public static final int MENU_ORDER_RESTAURANTLIST_EDIT = order++;
+	public static final int MENU_ORDER_ORDERLIST_EDIT = order++;
+	public static final int MENU_ORDER_DISHESLIST_EDIT = order++;
+	public static final int MENU_ORDER_DISHESTYPELIST_EDIT = order++;
+	
+	
 }
