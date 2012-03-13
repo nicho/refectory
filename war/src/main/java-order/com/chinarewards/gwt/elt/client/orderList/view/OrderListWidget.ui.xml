@@ -13,13 +13,13 @@
 			<!--查询条件 [[ -->
 			<div class="{new2.query-wrap}">
 				<div class="{new2.form}">
-					<label for="">员工状态:</label>
+					<label for="">订单状态:</label>
 					<g:ListBox ui:field="staffStatus" styleName="{new2.select}" /> 
 					<span class="{new2.nbspbig}"></span> 
-					<label for="">员工编号或姓名:</label>
+					<label for="">订单编号或姓名:</label>
 					<g:TextBox maxLength="30" ui:field="staffNameorNo" styleName="{new2.text2}" />
 					<span class="{new2.nbspbig}" ></span>
-					<label for="">员工角色:</label>
+					<label for="">订单xx:</label>
 					<g:ListBox ui:field="staffRole" styleName="{new2.select}" /> 
 					<span class="{new2.nbspbig}"></span> 
 					<span class="{new2.btn}">

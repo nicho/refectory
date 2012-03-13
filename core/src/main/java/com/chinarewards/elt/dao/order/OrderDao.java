@@ -72,7 +72,7 @@ public class OrderDao extends BaseDao<Orders> {
 		}
 
 		if (SEARCH.equals(type)) {
-			if (vo.getSortingDetail() != null) {
+			if (vo.getSortingDetail() != null && vo.getSortingDetail().getSort()!=null && vo.getSortingDetail().getDirection()!=null) {
 				eql.append(" ORDER BY o." + vo.getSortingDetail().getSort()
 						+ " " + vo.getSortingDetail().getDirection());
 			}

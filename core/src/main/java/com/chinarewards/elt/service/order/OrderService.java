@@ -2,6 +2,7 @@ package com.chinarewards.elt.service.order;
 
 import com.chinarewards.elt.domain.order.Orders;
 import com.chinarewards.elt.model.common.PageStore;
+import com.chinarewards.elt.model.order.OrderListCriteria;
 import com.chinarewards.elt.model.order.OrderStatus;
 import com.chinarewards.elt.model.user.UserContext;
 
@@ -52,5 +53,13 @@ public interface OrderService {
 	 * @return
 	 */
 	public String processingOrdersResult(String orderId,OrderStatus status);
+	
+	/**
+	 * 订单列表
+	 * @param context
+	 * @param Orders
+	 * @return
+	 */
+	public PageStore<Orders> getOrderList(UserContext context,OrderListCriteria criteria);
 	
 }

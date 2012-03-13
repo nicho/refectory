@@ -52,5 +52,11 @@ public class OrderServiceImpl implements OrderService {
 		return orderLogic.processingOrdersResult(orderId, status);
 	}
 
+	@Override
+	public PageStore<Orders> getOrderList(UserContext context,
+			OrderListCriteria criteria) {
+		return orderLogic.getOrderList(context, criteria);
+	}
+
 
 }
