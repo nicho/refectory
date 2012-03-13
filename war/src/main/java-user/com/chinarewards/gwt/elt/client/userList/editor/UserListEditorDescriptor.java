@@ -5,7 +5,7 @@ package com.chinarewards.gwt.elt.client.userList.editor;
 
 import com.chinarewards.gwt.elt.client.core.ui.Editor;
 import com.chinarewards.gwt.elt.client.core.ui.EditorDescriptor;
-import com.chinarewards.gwt.elt.client.staffList.plugin.StaffListConstants;
+import com.chinarewards.gwt.elt.client.userList.plugin.UserListConstants;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 
@@ -24,7 +24,7 @@ public class UserListEditorDescriptor implements EditorDescriptor {
 
 	@Override
 	public String getEditorId() {
-		return UserListConstants.EDITOR_STAFFLIST_SEARCH;
+		return UserListConstants.EDITOR_USERLIST_SEARCH;
 	}
 
 	@Override

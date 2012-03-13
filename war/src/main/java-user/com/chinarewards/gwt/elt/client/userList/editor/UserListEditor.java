@@ -1,7 +1,7 @@
 package com.chinarewards.gwt.elt.client.userList.editor;
 
 import com.chinarewards.gwt.elt.client.core.ui.impl.AbstractEditor;
-import com.chinarewards.gwt.elt.client.staffList.presenter.StaffListPresenter;
+import com.chinarewards.gwt.elt.client.userList.presenter.UserListPresenter;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 
@@ -11,24 +11,24 @@ import com.google.inject.Inject;
  */
 public class UserListEditor extends AbstractEditor {
 
-	final UserListPresenter staffListPresenter;
+	final UserListPresenter userListPresenter;
 	Object model;
 
 	@Inject
 	protected UserListEditor(UserListEditorDescriptor editorDescriptor,
-			UserListPresenter staffListPresenter) {
+			UserListPresenter userListPresenter) {
 		super(editorDescriptor);
-		this.staffListPresenter = staffListPresenter;
+		this.userListPresenter = userListPresenter;
 	}
 
 	@Override
 	public Widget asWidget() {
-		return staffListPresenter.getDisplay().asWidget();
+		return userListPresenter.getDisplay().asWidget();
 	}
 
 	@Override
 	public boolean beforeClose() {
-		staffListPresenter.unbind();
+		userListPresenter.unbind();
 		return true;
 	}
 
@@ -44,6 +44,6 @@ public class UserListEditor extends AbstractEditor {
 
 	public void setModel(Object model) {
 		this.model = model;
-		staffListPresenter.bind();
+		userListPresenter.bind();
 	}
 }

@@ -14,7 +14,7 @@ import com.chinarewards.gwt.elt.client.core.PluginDescriptor;
 import com.chinarewards.gwt.elt.client.core.ui.MenuItem;
 import com.chinarewards.gwt.elt.client.plugin.MenuConstants;
 import com.chinarewards.gwt.elt.client.plugin.PluginConstants;
-import com.chinarewards.gwt.elt.client.staffList.editor.StaffListEditorDescriptor;
+import com.chinarewards.gwt.elt.client.userList.editor.UserListEditorDescriptor;
 import com.google.gwt.user.client.ui.Image;
 import com.google.inject.Inject;
 
@@ -26,12 +26,12 @@ public class UserListPluginDescriptor implements PluginDescriptor {
 
 	final static Set<Extension> ext = new HashSet<Extension>();
 	final UserListPlugin userPlugin;
-	final UserListEditorDescriptor staffListRegisterEditorDescriptor;
+	final UserListEditorDescriptor userListRegisterEditorDescriptor;
 
 	@Inject
 	public UserListPluginDescriptor(
-			final UserListEditorDescriptor staffListRegisterEditorDescriptor) {
-		this.staffListRegisterEditorDescriptor = staffListRegisterEditorDescriptor;
+			final UserListEditorDescriptor userListRegisterEditorDescriptor) {
+		this.userListRegisterEditorDescriptor = userListRegisterEditorDescriptor;
 		userPlugin = new UserListPlugin(this);
 
 		/**
@@ -50,12 +50,12 @@ public class UserListPluginDescriptor implements PluginDescriptor {
 
 					@Override
 					public int getOrder() {
-						return MenuConstants.MENU_ORDER_STAFFLIST_EDIT;
+						return MenuConstants.MENU_ORDER_USERLIST_EDIT;
 					}
 
 					@Override
 					public String getMenuId() {
-						return UserListConstants.MENU_STAFFLIST_SEARCH;
+						return UserListConstants.MENU_USERLIST_SEARCH;
 					}
 
 					@Override
@@ -73,8 +73,8 @@ public class UserListPluginDescriptor implements PluginDescriptor {
 						Platform.getInstance()
 								.getEditorRegistry()
 								.openEditor(
-										UserListConstants.EDITOR_STAFFLIST_SEARCH,
-										"EDITOR_STAFFLIST_SEARCH_DO_ID", null);
+										UserListConstants.EDITOR_USERLIST_SEARCH,
+										"EDITOR_USERLIST_SEARCH_DO_ID", null);
 					}
 
 					@Override
@@ -101,7 +101,7 @@ public class UserListPluginDescriptor implements PluginDescriptor {
 
 			@Override
 			public Object getInstance() {
-				return staffListRegisterEditorDescriptor;
+				return userListRegisterEditorDescriptor;
 			}
 
 			@Override
@@ -114,7 +114,7 @@ public class UserListPluginDescriptor implements PluginDescriptor {
 
 	@Override
 	public String getPluginId() {
-		return UserListConstants.PLUGIN_STAFFLIST;
+		return UserListConstants.PLUGIN_USERLIST;
 	}
 
 	@Override

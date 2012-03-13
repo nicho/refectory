@@ -3,8 +3,8 @@
  */
 package com.chinarewards.gwt.elt.client.userList.plugin;
 
-import com.chinarewards.gwt.elt.client.staffList.editor.StaffListEditor;
-import com.chinarewards.gwt.elt.client.staffList.editor.StaffListEditorDescriptor;
+import com.chinarewards.gwt.elt.client.userList.editor.UserListEditor;
+import com.chinarewards.gwt.elt.client.userList.editor.UserListEditorDescriptor;
 import com.google.gwt.inject.client.AbstractGinModule;
 import com.google.inject.Singleton;
 

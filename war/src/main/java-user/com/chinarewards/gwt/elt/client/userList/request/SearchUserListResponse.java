@@ -4,7 +4,7 @@ import java.util.List;
 
 import net.customware.gwt.dispatch.shared.Result;
 
-import com.chinarewards.gwt.elt.client.staffList.model.StaffListClient;
+import com.chinarewards.gwt.elt.client.userList.model.UserListClient;
 
 /**
  * Models the response after user process request.

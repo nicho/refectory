@@ -8,10 +8,10 @@ import com.google.gwt.user.client.ui.HasValue;
 import com.google.gwt.user.client.ui.Panel;
 import com.google.gwt.user.client.ui.Widget;
 
-public interface UserListPresenter extends Presenter<UserListPresenter.StaffListDisplay> {
+public interface UserListPresenter extends Presenter<UserListPresenter.UserListDisplay> {
 	
 
-	public static interface StaffListDisplay extends Display {
+	public static interface UserListDisplay extends Display {
 
 		public HasClickHandlers getSearchBtnClickHandlers();
 		public HasClickHandlers getSynchronousStaffBtnClickHandlers();

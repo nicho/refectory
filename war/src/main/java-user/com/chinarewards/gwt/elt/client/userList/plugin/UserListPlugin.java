@@ -11,8 +11,8 @@ import com.chinarewards.gwt.elt.client.core.AbstractPlugin;
  */
 public class UserListPlugin extends AbstractPlugin {
 
-	public UserListPlugin(UserListPluginDescriptor staffListPluginDescriptor) {
-		super(staffListPluginDescriptor);
+	public UserListPlugin(UserListPluginDescriptor userListPluginDescriptor) {
+		super(userListPluginDescriptor);
 	}
 
 	@Override

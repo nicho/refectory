@@ -5,8 +5,8 @@ package com.chinarewards.gwt.elt.client.userList.request;
 
 import net.customware.gwt.dispatch.shared.Action;
 
-import com.chinarewards.gwt.elt.client.staffList.model.StaffListCriteria;
 import com.chinarewards.gwt.elt.client.support.UserSession;
+import com.chinarewards.gwt.elt.client.userList.model.UserListCriteria;
 
 /**
  * An action which perform request to search user.
@@ -41,7 +41,7 @@ public class SearchUserListRequest implements Action<SearchUserListResponse> {
 
 	/**
 	 * 
-	 * @param StaffListVo
+	 * @param UserListVo
 	 */
 	public SearchUserListRequest(UserListCriteria criteria,UserSession session) {
 		this.criteria = criteria;

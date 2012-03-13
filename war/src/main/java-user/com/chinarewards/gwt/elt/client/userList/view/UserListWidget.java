@@ -1,7 +1,7 @@
 package com.chinarewards.gwt.elt.client.userList.view;
 
 
-import com.chinarewards.gwt.elt.client.staffList.presenter.StaffListPresenter.StaffListDisplay;
+import com.chinarewards.gwt.elt.client.userList.presenter.UserListPresenter.UserListDisplay;
 import com.chinarewards.gwt.elt.model.user.UserRoleVo;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.HasClickHandlers;
@@ -16,7 +16,7 @@ import com.google.gwt.user.client.ui.Panel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 
-public class UserListWidget extends Composite implements StaffListDisplay {
+public class UserListWidget extends Composite implements UserListDisplay {
 
 	@UiField
 	TextBox staffNameorNo;
@@ -41,10 +41,10 @@ public class UserListWidget extends Composite implements StaffListDisplay {
 	@UiField
 	Panel breadCrumbs;
 	
-	private static StaffListWidgetUiBinder uiBinder = GWT
-			.create(StaffListWidgetUiBinder.class);
+	private static UserListWidgetUiBinder uiBinder = GWT
+			.create(UserListWidgetUiBinder.class);
 
-	interface StaffListWidgetUiBinder extends
+	interface UserListWidgetUiBinder extends
 			UiBinder<Widget, UserListWidget> {
 	}
 

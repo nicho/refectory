@@ -5,44 +5,29 @@ import java.util.Comparator;
 import net.customware.gwt.dispatch.client.DispatchAsync;
 
 import com.chinarewards.gwt.elt.client.breadCrumbs.presenter.BreadCrumbsPresenter;
-import com.chinarewards.gwt.elt.client.core.Platform;
 import com.chinarewards.gwt.elt.client.core.view.constant.ViewConstants;
-import com.chinarewards.gwt.elt.client.mail.model.MailVo;
-import com.chinarewards.gwt.elt.client.mail.request.MailRequest;
-import com.chinarewards.gwt.elt.client.mail.request.MailResponse;
 import com.chinarewards.gwt.elt.client.mvp.BasePresenter;
 import com.chinarewards.gwt.elt.client.mvp.ErrorHandler;
 import com.chinarewards.gwt.elt.client.mvp.EventBus;
-import com.chinarewards.gwt.elt.client.staffAdd.plugin.StaffAddConstants;
-import com.chinarewards.gwt.elt.client.staffList.dataprovider.StaffListViewAdapter;
-import com.chinarewards.gwt.elt.client.staffList.model.StaffListClient;
-import com.chinarewards.gwt.elt.client.staffList.model.StaffListCriteria;
-import com.chinarewards.gwt.elt.client.staffList.model.StaffListCriteria.StaffStatus;
-import com.chinarewards.gwt.elt.client.staffList.plugin.StaffListConstants;
-import com.chinarewards.gwt.elt.client.staffList.request.StaffGenerateUserRequest;
-import com.chinarewards.gwt.elt.client.staffList.request.StaffGenerateUserResponse;
-import com.chinarewards.gwt.elt.client.staffList.request.UpdateUserPwdRequest;
-import com.chinarewards.gwt.elt.client.staffList.request.UpdateUserPwdResponse;
-import com.chinarewards.gwt.elt.client.staffView.plugin.StaffViewConstants;
 import com.chinarewards.gwt.elt.client.support.SessionManager;
-import com.chinarewards.gwt.elt.client.ui.HyperLinkCell;
+import com.chinarewards.gwt.elt.client.userList.dataprovider.UserListViewAdapter;
+import com.chinarewards.gwt.elt.client.userList.model.UserListClient;
+import com.chinarewards.gwt.elt.client.userList.model.UserListCriteria;
+import com.chinarewards.gwt.elt.client.userList.model.UserListCriteria.StaffStatus;
 import com.chinarewards.gwt.elt.client.widget.EltNewPager;
 import com.chinarewards.gwt.elt.client.widget.EltNewPager.TextLocation;
 import com.chinarewards.gwt.elt.client.widget.GetValue;
 import com.chinarewards.gwt.elt.client.widget.ListCellTable;
 import com.chinarewards.gwt.elt.client.widget.Sorting;
 import com.chinarewards.gwt.elt.client.win.Win;
-import com.chinarewards.gwt.elt.client.win.confirm.ConfirmHandler;
 import com.chinarewards.gwt.elt.model.user.UserRoleVo;
-import com.google.gwt.cell.client.FieldUpdater;
 import com.google.gwt.cell.client.TextCell;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.inject.Inject;
 
 public class UserListPresenterImpl extends
-		BasePresenter<UserListPresenter.StaffListDisplay> implements
+		BasePresenter<UserListPresenter.UserListDisplay> implements
 		UserListPresenter {
 
 	private final DispatchAsync dispatch;
@@ -56,7 +41,7 @@ public class UserListPresenterImpl extends
 	private final BreadCrumbsPresenter breadCrumbs;
 	@Inject
 	public UserListPresenterImpl(EventBus eventBus,
-			StaffListDisplay display, DispatchAsync dispatch,
+			UserListDisplay display, DispatchAsync dispatch,
 			SessionManager sessionManager,Win win,BreadCrumbsPresenter breadCrumbs,ErrorHandler errorHandler) {
 		super(eventBus, display);
 		this.dispatch = dispatch;
@@ -79,17 +64,7 @@ public class UserListPresenterImpl extends
 					}
 				}));
 
-		registerHandler(display.getAddStaffBtnClickHandlers().addClickHandler(
-				new ClickHandler() {
-					@Override
-					public void onClick(ClickEvent event) {
-						Platform.getInstance()
-						.getEditorRegistry()
-						.openEditor(
-								StaffAddConstants.EDITOR_STAFFADD_SEARCH,
-								"EDITOR_STAFFADD_SEARCH_DO_ID", null);
-					}
-				}));
+
 		registerHandler(display.getSynchronousStaffBtnClickHandlers().addClickHandler(
 				new ClickHandler() {
 					@Override
@@ -189,156 +164,9 @@ public class UserListPresenterImpl extends
 						return staff.getPhone();
 					}
 				}, ref, "phone");
-		cellTable.addColumn("员工状态", new TextCell(),
-				new GetValue<UserListClient, String>() {
-					@Override
-					public String getValue(UserListClient staff) {
-						if(staff.getStaffStatus()!=null)
-						return staff.getStaffStatus().getDisplayName();
-						else
-						return "未知";
-					}
-				});
-		cellTable.addColumn("操作", new HyperLinkCell(),
-				new GetValue<UserListClient, String>() {
-					@Override
-					public String getValue(UserListClient rewards) {
-						return "查看";
-					}
-				}, new FieldUpdater<UserListClient, String>() {
 
-					@Override
-					public void update(int index, final UserListClient o,
-							String value) {
-						Platform.getInstance()
-						.getEditorRegistry()
-						.openEditor(
-								StaffViewConstants.EDITOR_STAFFVIEW_SEARCH,
-								"EDITOR_STAFFVIEW_SEARCH_DO_ID", o.getStaffId());
-					}
-
-				});
-		if(sessionManager.getSession().getLastLoginRole()==UserRoleVo.CORP_ADMIN)
-		{
 		
-		cellTable.addColumn("操作", new HyperLinkCell(),
-				new GetValue<UserListClient, String>() {
-					@Override
-					public String getValue(UserListClient rewards) {
-						return "生成账户";
-					}
-				}, new FieldUpdater<UserListClient, String>() {
-
-					@Override
-					public void update(int index, final UserListClient o,
-							String value) {
-						
-						win.confirm("提示", "确定生成 <font color='blue'>"+o.getStaffName()+"</font> 的账户",new ConfirmHandler() {
-							
-							@Override
-							public void confirm() {
-								dispatch.execute(new StaffGenerateUserRequest(o.getStaffId(),sessionManager.getSession()),
-										new AsyncCallback<StaffGenerateUserResponse>() {
-
-											@Override
-											public void onFailure(Throwable t) {
-												win.alert(t.getMessage());
-											}
-
-											@Override
-											public void onSuccess(StaffGenerateUserResponse resp) {
-												win.alert(resp.getMessage());
-												sendMail(o.getEmail());
-											}
-										});
-								
-							}
-						});
-
-					}
-
-				});
-		cellTable.addColumn("操作", new HyperLinkCell(),
-				new GetValue<UserListClient, String>() {
-					@Override
-					public String getValue(UserListClient rewards) {
-						return "重置密码";
-					}
-				}, new FieldUpdater<UserListClient, String>() {
-
-					@Override
-					public void update(int index, final UserListClient o,
-							String value) {
-						
-						win.confirm("提示", "确定重置 <font color='blue'>"+o.getStaffName()+"</font> 的密码", new ConfirmHandler() {
-							
-							@Override
-							public void confirm() {
-								dispatch.execute(new UpdateUserPwdRequest(o.getStaffId(),"123",sessionManager.getSession()),
-										new AsyncCallback<UpdateUserPwdResponse>() {
-
-											@Override
-											public void onFailure(Throwable t) {
-												win.alert(t.getMessage());
-											}
-
-											@Override
-											public void onSuccess(UpdateUserPwdResponse resp) {
-												if("success".equals(resp.getMessage()))
-												{
-													win.alert("密码重置成功!初始密码:123");
-													sendMail(o.getEmail());
-												}
-												
-											}
-										});
-								}
-						});
-						
-						
-					}
-
-				});
-		cellTable.addColumn("操作", new HyperLinkCell(),
-				new GetValue<UserListClient, String>() {
-					@Override
-					public String getValue(UserListClient rewards) {
-						return "发送Email";
-					}
-				}, new FieldUpdater<UserListClient, String>() {
-
-					@Override
-					public void update(int index, final UserListClient o,
-							String value) {
-						win.alert("待实现");
-					}
-
-				});
-		}
-		else
-		{
-			display.displayBtn();
-		}
 	}
-	public void sendMail(String emailAddress)
-	   {
-		   MailVo mailvo = new MailVo();
-		   mailvo.setEmailAddress(emailAddress);
-		   mailvo.setContent("你的ELT账号是"+emailAddress.substring(0,emailAddress.indexOf("@"))+"初始密码是123");
-		   MailRequest request = new MailRequest();
-		   request.setMailvo(mailvo);
-		   dispatch.execute(request,new AsyncCallback<MailResponse>() {
-
-						@Override
-						public void onFailure(Throwable t) {
-							win.alert(t.getMessage());
-						}
-	    				@Override
-						public void onSuccess(MailResponse resp) {
-							win.alert(resp.getToken());
-							
-						}
-					});
-	   }
+	
 
 }

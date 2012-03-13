@@ -4,26 +4,26 @@ import net.customware.gwt.dispatch.client.DispatchAsync;
 
 import com.chinarewards.gwt.elt.client.dataprovider.BaseDataProvider;
 import com.chinarewards.gwt.elt.client.mvp.ErrorHandler;
-import com.chinarewards.gwt.elt.client.staffList.model.StaffListClient;
-import com.chinarewards.gwt.elt.client.staffList.model.StaffListCriteria;
-import com.chinarewards.gwt.elt.client.staffList.presenter.StaffListPresenter.StaffListDisplay;
-import com.chinarewards.gwt.elt.client.staffList.request.SearchStaffListRequest;
-import com.chinarewards.gwt.elt.client.staffList.request.SearchStaffListResponse;
 import com.chinarewards.gwt.elt.client.support.SessionManager;
+import com.chinarewards.gwt.elt.client.userList.model.UserListClient;
+import com.chinarewards.gwt.elt.client.userList.model.UserListCriteria;
+import com.chinarewards.gwt.elt.client.userList.presenter.UserListPresenter.UserListDisplay;
+import com.chinarewards.gwt.elt.client.userList.request.SearchUserListRequest;
+import com.chinarewards.gwt.elt.client.userList.request.SearchUserListResponse;
 import com.chinarewards.gwt.elt.model.PaginationDetailClient;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public class UserListViewAdapter extends BaseDataProvider<UserListClient> {
 
 	final DispatchAsync dispatch;
-	final StaffListDisplay display;
+	final UserListDisplay display;
 	UserListCriteria criteria;
 	final ErrorHandler errorHandler;
 	final SessionManager sessionManager;
 
 	public UserListViewAdapter(DispatchAsync dispatch,
 			UserListCriteria criteria, ErrorHandler errorHandler,
-			SessionManager sessionManager, StaffListDisplay display) {
+			SessionManager sessionManager, UserListDisplay display) {
 		this.dispatch = dispatch;
 		this.criteria = criteria;
 		this.errorHandler = errorHandler;
@@ -33,12 +33,12 @@ public class UserListViewAdapter extends BaseDataProvider<UserListClient> {
 
 	public void fetchData(final int start, final int length) {
 		// if (!GWT.isScript()) {
-		// List<StaffListClient> list = new ArrayList<StaffListClient>();
+		// List<UserListClient> list = new ArrayList<UserListClient>();
 		// for (int i = start; i < start + length; i++) {
-		// StaffListClient item = new StaffListClient();
+		// UserListClient item = new UserListClient();
 		// item.setId("id" + i);
 		// item.setName("rewards" + i);
-		// //item.setStatus(StaffListStatus.TO_BE_ISSUE);
+		// //item.setStatus(UserListStatus.TO_BE_ISSUE);
 		// list.add(item);
 		// }
 		//

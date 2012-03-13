@@ -38,6 +38,12 @@
 								<g:Button ui:field="addStaffBtn">添加新员工</g:Button>
 						</span>
 						<span class="{new2.btn}">
+								<g:Button ui:field="createSysUserBtn">批量生成帐号</g:Button>
+						</span>
+						<span class="{new2.btn}">
+								<g:Button ui:field="printBtn">打印员工资料</g:Button>
+						</span>
+						<span class="{new2.btn}">
 								<g:Button ui:field="synchronousStaffBtn">同步员工资料</g:Button>
 						</span>
 					</div>

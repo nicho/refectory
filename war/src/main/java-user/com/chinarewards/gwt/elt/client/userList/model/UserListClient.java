@@ -2,8 +2,6 @@ package com.chinarewards.gwt.elt.client.userList.model;
 
 import java.io.Serializable;
 
-import com.chinarewards.gwt.elt.client.staffList.model.StaffListCriteria.StaffStatus;
-
 public class UserListClient implements Serializable, Comparable<UserListClient> {
 
 	/**
@@ -16,7 +14,6 @@ public class UserListClient implements Serializable, Comparable<UserListClient> 
 	String departmentName;
 	String jobPosition;
 	String phone;
-	StaffStatus staffStatus;
 	String staffId;
 	String photo;
     String email;
@@ -63,12 +60,7 @@ public class UserListClient implements Serializable, Comparable<UserListClient> 
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public StaffStatus getStaffStatus() {
-		return staffStatus;
-	}
-	public void setStaffStatus(StaffStatus staffStatus) {
-		this.staffStatus = staffStatus;
-	}
+
 	public String getStaffId() {
 		return staffId;
 	}
