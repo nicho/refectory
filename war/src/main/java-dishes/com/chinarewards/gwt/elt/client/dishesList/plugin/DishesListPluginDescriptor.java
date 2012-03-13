@@ -65,7 +65,7 @@ public class DishesListPluginDescriptor implements PluginDescriptor {
 
 					@Override
 					public String getTitle() {
-						return "员工列表";
+						return "菜单列表";
 					}
 
 					@Override

@@ -10,6 +10,12 @@ import com.chinarewards.gwt.elt.client.core.ui.SiteManager;
 import com.chinarewards.gwt.elt.client.core.ui.impl.ButtonMenuProcessor;
 import com.chinarewards.gwt.elt.client.core.ui.impl.SimpleEditorRegistry;
 import com.chinarewards.gwt.elt.client.core.ui.impl.SimpleSiteManager;
+import com.chinarewards.gwt.elt.client.dictionaryList.plugin.DictionaryListPluginDescriptor;
+import com.chinarewards.gwt.elt.client.dishesList.plugin.DishesListPluginDescriptor;
+import com.chinarewards.gwt.elt.client.dishesTypeList.plugin.DishesTypeListPluginDescriptor;
+import com.chinarewards.gwt.elt.client.orderList.plugin.OrderListPluginDescriptor;
+import com.chinarewards.gwt.elt.client.restaurantList.plugin.RestaurantListPluginDescriptor;
+import com.chinarewards.gwt.elt.client.userList.plugin.UserListPluginDescriptor;
 import com.google.gwt.inject.client.AbstractGinModule;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
@@ -43,12 +49,24 @@ public class PlatformModule extends AbstractGinModule {
 	@Named("admin")
 	PluginSet providePluginSet(
 	// ---- PLUGINS DEFINE BELOW (2) ----
-			CorePluginDescriptor core // core
+			CorePluginDescriptor core, // core
+			DictionaryListPluginDescriptor dictionaryList,
+			RestaurantListPluginDescriptor restaurantList,
+			UserListPluginDescriptor userList,
+			DishesListPluginDescriptor dishesList,
+			DishesTypeListPluginDescriptor dishesTypeList,
+			OrderListPluginDescriptor orderList
 	) {
 
 		if (pluginSet == null) {
 			pluginSet = new InMemoryPluginSet();
 			pluginSet.registerPlugin(core);
+			pluginSet.registerPlugin(dictionaryList);
+			pluginSet.registerPlugin(restaurantList);
+			pluginSet.registerPlugin(userList);
+			pluginSet.registerPlugin(dishesList);
+			pluginSet.registerPlugin(dishesTypeList);
+			pluginSet.registerPlugin(orderList);
 
 		}
 

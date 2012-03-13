@@ -205,6 +205,8 @@
 						<configuration>
 							<sources>
 								<source>src/main/java-user</source>
+								<source>src/main/java-dishes</source>
+								<source>src/main/java-order</source>
 							</sources>
 						</configuration>
 					</execution>

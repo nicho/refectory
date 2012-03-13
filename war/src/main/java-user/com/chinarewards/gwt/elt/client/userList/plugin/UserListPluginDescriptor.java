@@ -65,7 +65,7 @@ public class UserListPluginDescriptor implements PluginDescriptor {
 
 					@Override
 					public String getTitle() {
-						return "员工列表";
+						return "用户管理";
 					}
 
 					@Override

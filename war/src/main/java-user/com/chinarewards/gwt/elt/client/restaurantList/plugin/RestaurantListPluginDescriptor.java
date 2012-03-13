@@ -65,7 +65,7 @@ public class RestaurantListPluginDescriptor implements PluginDescriptor {
 
 					@Override
 					public String getTitle() {
-						return "员工列表";
+						return "分店管理";
 					}
 
 					@Override

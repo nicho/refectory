@@ -10,8 +10,14 @@ import com.chinarewards.gwt.elt.client.breadCrumbs.ui.BreadCrumbsMenu;
 import com.chinarewards.gwt.elt.client.core.ui.MenuItem;
 import com.chinarewards.gwt.elt.client.core.ui.MenuProcessor;
 import com.chinarewards.gwt.elt.client.core.ui.event.MenuClickEvent;
+import com.chinarewards.gwt.elt.client.dictionaryList.plugin.DictionaryListConstants;
+import com.chinarewards.gwt.elt.client.dishesList.plugin.DishesListConstants;
+import com.chinarewards.gwt.elt.client.dishesTypeList.plugin.DishesTypeListConstants;
 import com.chinarewards.gwt.elt.client.mvp.EventBus;
+import com.chinarewards.gwt.elt.client.orderList.plugin.OrderListConstants;
+import com.chinarewards.gwt.elt.client.restaurantList.plugin.RestaurantListConstants;
 import com.chinarewards.gwt.elt.client.support.SessionManager;
+import com.chinarewards.gwt.elt.client.userList.plugin.UserListConstants;
 import com.chinarewards.gwt.elt.model.user.UserRoleVo;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -132,7 +138,21 @@ public class ButtonMenuProcessor implements MenuProcessor {
 
 	private List<String> getMenuItemName(String keyname) {
 		List<String> items = new ArrayList<String>();
-		
+		if("User".equals(keyname))
+		{
+			items.add(UserListConstants.MENU_USERLIST_SEARCH);
+			items.add(RestaurantListConstants.MENU_RESTAURANTLIST_SEARCH);
+			items.add(DictionaryListConstants.MENU_DICTIONARYLIST_SEARCH);
+		}
+		if("Order".equals(keyname))
+		{
+			items.add(OrderListConstants.MENU_ORDERLIST_SEARCH);
+		}
+		if("Menu".equals(keyname))
+		{
+			items.add(DishesListConstants.MENU_DISHESLIST_SEARCH);
+			items.add(DishesTypeListConstants.MENU_DISHESTYPELIST_SEARCH);
+		}
 		return items;
 	}
 
