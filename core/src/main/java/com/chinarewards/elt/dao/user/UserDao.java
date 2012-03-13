@@ -163,15 +163,15 @@ public class UserDao extends BaseDao<SysUser> {
 		StringBuffer eql = new StringBuffer();
 
 		if (SEARCH.equals(type)) {
-			eql.append(" SELECT o FROM users o  where  1=1 ");
+			eql.append(" SELECT o FROM SysUser o  where  1=1 ");
 		
 		} else if (COUNT.equals(type)) {
-			eql.append(" SELECT COUNT(o) FROM users o where  1=1 ");
+			eql.append(" SELECT COUNT(o) FROM SysUser o where  1=1 ");
 
 		}
 
 		if (SEARCH.equals(type)) {
-			if (vo.getSortingDetail() != null) {
+			if (vo.getSortingDetail() != null && vo.getSortingDetail().getSort()!=null && vo.getSortingDetail().getDirection()!=null) {
 				eql.append(" user BY o." + vo.getSortingDetail().getSort()
 						+ " " + vo.getSortingDetail().getDirection());
 			}

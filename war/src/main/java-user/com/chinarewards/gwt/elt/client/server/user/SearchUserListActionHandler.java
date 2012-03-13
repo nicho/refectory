@@ -3,6 +3,8 @@ package com.chinarewards.gwt.elt.client.server.user;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import net.customware.gwt.dispatch.server.ExecutionContext;
 import net.customware.gwt.dispatch.shared.DispatchException;
 
@@ -15,7 +17,6 @@ import com.chinarewards.gwt.elt.client.userList.model.UserListClient;
 import com.chinarewards.gwt.elt.client.userList.request.SearchUserListRequest;
 import com.chinarewards.gwt.elt.client.userList.request.SearchUserListResponse;
 import com.chinarewards.gwt.elt.server.BaseActionHandler;
-import com.google.inject.Inject;
 
 public class SearchUserListActionHandler extends
 		BaseActionHandler<SearchUserListRequest, SearchUserListResponse> {
