@@ -22,13 +22,11 @@ public class OrderListWidget extends Composite implements OrderListDisplay {
 	TextBox staffNameorNo;
 	@UiField
 	ListBox staffStatus;
-	@UiField
-	ListBox staffRole;
+
 	
 	@UiField
 	Button addStaffBtn;
-	@UiField
-	Button synchronousStaffBtn;
+
 	@UiField
 	Button searchBtn;
 	
@@ -57,10 +55,6 @@ public class OrderListWidget extends Composite implements OrderListDisplay {
 		return this.searchBtn;
 	}
 
-	@Override
-	public HasClickHandlers getSynchronousStaffBtnClickHandlers() {
-		return this.synchronousStaffBtn;
-	}
 
 	@Override
 	public HasClickHandlers getAddStaffBtnClickHandlers() {
@@ -70,16 +64,11 @@ public class OrderListWidget extends Composite implements OrderListDisplay {
 	@Override
 	public void initStaffStatus() {
 		staffStatus.addItem("不限", "ALL");
-		staffStatus.addItem("待入职", "ENTRY");
-		staffStatus.addItem("在职", "JOB");
-		staffStatus.addItem("已离职", "DEPARTURE");
+		staffStatus.addItem("待处理", "pending");
+		staffStatus.addItem("已处理", "processed");
+		staffStatus.addItem("已完成", "completed");
 		
-		staffRole.addItem("不限", "ALL");
-		staffRole.addItem("HR管理员", UserRoleVo.CORP_ADMIN.toString());
-		staffRole.addItem("部门管理员", UserRoleVo.DEPT_MGR.toString());
-		staffRole.addItem("礼品管理员", UserRoleVo.GIFT.toString());
-		staffRole.addItem("普通员工", UserRoleVo.STAFF.toString());
-		
+
 		
 	}
 
@@ -115,16 +104,15 @@ public class OrderListWidget extends Composite implements OrderListDisplay {
 	public String getSttaffStatus() {
 		return staffStatus.getValue(staffStatus.getSelectedIndex());
 	}
-	@Override
-	public String getSttaffRole() {
-		return staffRole.getValue(staffRole.getSelectedIndex());
-	}
+
 
 	@Override
 	public void displayBtn() {
 		addStaffBtn.setVisible(false);
-		synchronousStaffBtn.setVisible(false);
+	
 	}
+
+
 
 
 }

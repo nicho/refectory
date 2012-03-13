@@ -20,7 +20,6 @@ import com.chinarewards.gwt.elt.client.widget.GetValue;
 import com.chinarewards.gwt.elt.client.widget.ListCellTable;
 import com.chinarewards.gwt.elt.client.widget.Sorting;
 import com.chinarewards.gwt.elt.client.win.Win;
-import com.chinarewards.gwt.elt.model.user.UserRoleVo;
 import com.google.gwt.cell.client.TextCell;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -65,13 +64,7 @@ public class OrderListPresenterImpl extends
 				}));
 
 
-		registerHandler(display.getSynchronousStaffBtnClickHandlers().addClickHandler(
-				new ClickHandler() {
-					@Override
-					public void onClick(ClickEvent event) {
-						win.alert("同步");
-					}
-				}));
+
 	}
 	
 	private void init() {	
@@ -102,8 +95,6 @@ public class OrderListPresenterImpl extends
 		criteria.setStaffNameorNo(display.getStaffNameorNo().getValue());
 		if(!"ALL".equals(display.getSttaffStatus()))
 			criteria.setStaffStatus(StaffStatus.valueOf(display.getSttaffStatus()));
-		if(!"ALL".equals(display.getSttaffRole()))
-			criteria.setStaffRole(UserRoleVo.valueOf(display.getSttaffRole()));
 
 		listViewAdapter = new OrderListViewAdapter(dispatch, criteria,
 				errorHandler, sessionManager,display);

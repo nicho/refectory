@@ -19,9 +19,7 @@
 					<label for="">订单编号或姓名:</label>
 					<g:TextBox maxLength="30" ui:field="staffNameorNo" styleName="{new2.text2}" />
 					<span class="{new2.nbspbig}" ></span>
-					<label for="">订单xx:</label>
-					<g:ListBox ui:field="staffRole" styleName="{new2.select}" /> 
-					<span class="{new2.nbspbig}"></span> 
+
 					<span class="{new2.btn}">
 						<g:Button ui:field="searchBtn" text="查询" width="100px" />
 					</span>
@@ -35,20 +33,12 @@
 			<p class="{new2.send-news}">
 					<div style="float:right;text-align:right;padding-bottom: 5px;">
 						<span class="{new2.btn}">
-								<g:Button ui:field="addStaffBtn">添加新员工</g:Button>
+								<g:Button ui:field="addStaffBtn">添加订单</g:Button>
 						</span>
-						<span class="{new2.btn}">
-								<g:Button ui:field="createSysUserBtn">批量生成帐号</g:Button>
-						</span>
-						<span class="{new2.btn}">
-								<g:Button ui:field="printBtn">打印员工资料</g:Button>
-						</span>
-						<span class="{new2.btn}">
-								<g:Button ui:field="synchronousStaffBtn">同步员工资料</g:Button>
-						</span>
+
 					</div>
 			</p>
-			<div class="{new2.divtext}">共有 <g:InlineLabel ui:field="dataCount" styleName="{new2.divfont}"></g:InlineLabel> 位在职员工</div><div  class="{new2.divend}"></div>
+			<div class="{new2.divtext}">共有 <g:InlineLabel ui:field="dataCount" styleName="{new2.divfont}"></g:InlineLabel> 订单</div><div  class="{new2.divend}"></div>
 			<div class="{new2.table}">
 				<g:FlowPanel ui:field="resultPanel" />
 			</div>

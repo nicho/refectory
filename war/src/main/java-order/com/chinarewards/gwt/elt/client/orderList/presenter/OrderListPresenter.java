@@ -14,11 +14,10 @@ public interface OrderListPresenter extends Presenter<OrderListPresenter.OrderLi
 	public static interface OrderListDisplay extends Display {
 
 		public HasClickHandlers getSearchBtnClickHandlers();
-		public HasClickHandlers getSynchronousStaffBtnClickHandlers();
 		public HasClickHandlers getAddStaffBtnClickHandlers();
 		void initStaffStatus();
 		String getSttaffStatus();
-		String getSttaffRole();
+
 		HasValue<String> getStaffNameorNo();
 
 		void setDataCount(String text);
